@@ -3,54 +3,72 @@ import Head from 'next/head';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import Header from '../components/Header.js';
 import LandingImage from '../components/LandingImage.js';
 import Footer from '../components/Footer.js';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+      // light: will be calculated from palette.primary.main,
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      main: '#dc004e',
+      // light: will be calculated from palette.primary.main,
+      // dark: will be calculated from palette.secondary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    // Used by `getContrastText()` to maximize the contrast between
+    // the background and the text.
+    contrastThreshold: 3,
+    // Used by the functions below to shift a color's luminance by approximately
+    // two indexes within its tonal palette.
+    // E.g., shift from Red 500 to Red 300 or Red 700.
+    tonalOffset: 0.2,
+  },
+});
 
 const sections = [
-    { title: 'Technology', url: '#' },
-    { title: 'Design', url: '#' },
-    { title: 'Culture', url: '#' },
-    { title: 'Business', url: '#' },
-    { title: 'Politics', url: '#' },
-    { title: 'Opinion', url: '#' },
-    { title: 'Science', url: '#' },
-    { title: 'Health', url: '#' },
-    { title: 'Style', url: '#' },
-    { title: 'Travel', url: '#' },
+    { title: 'Our Mission', url: '#' },
+    { title: 'Apply', url: '#' },
+    { title: 'Donate', url: '#' },
+    { title: 'Our Team', url: '#' },
+    { title: 'Contact', url: '#' },
+    { title: 'FAQ', url: '#' },
   ];
 
-
-  const mainFeaturedPost = {
-    title: 'Title of a longer featured blog post',
-    description:
-      "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random',
-    imgText: 'main image description',
-    linkText: 'Continue reading…',
+  const landingImageContent = {
+    title: 'The Paulo Claudio Foundation',
+    image: '/skyBackground.jpeg',
+    imgText: 'sky background',
   };
+
 
 export default function Index() {
     return (
     <>
         <Head>
-            <title>Paulos Points</title>
+            <title>Paulo's Points</title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+            <link rel="shortcut icon" href="/favicon.png" />
         </Head>
 
         <CssBaseline />
 
-        <Container maxWidth="lg">
-            <Header title="Blog" sections={sections} />
-            <main>
-                <LandingImage post={mainFeaturedPost}/>
-                does this work?
-            </main>
-        </Container>
-
-        <Footer />
+        <ThemeProvider theme={theme}>
+          <Header title="Blog" sections={sections} />
+          <Container maxWidth="lg">
+              <main>
+                  <LandingImage content={landingImageContent}/>
+              </main>
+          </Container>
+          <Footer />
+        </ThemeProvider>
     </>
     );
   }

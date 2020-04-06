@@ -1,11 +1,15 @@
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -22,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
     padding: '3px',
     flexShrink: 0,
   },
+  responsiveImage: {
+    width: '100%',
+    height: 'auto',
+  }
 }));
 
 export default function Header(props) {
@@ -29,25 +37,18 @@ export default function Header(props) {
   const { sections, title } = props;
 
   return (
-    <>
+    <AppBar position="sticky">
       <Toolbar className={classes.toolbar}>
-        <Button size="small">Subscribe</Button>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          className={classes.toolbarTitle}
-        >
-          {title}
-        </Typography>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
+        <Grid container spacing={0}>
+          <Grid item xs={4}>
+          <img className={classes.responsiveImage} src="/mainLogo.png" />
+          </Grid>
+          <Grid item container xs={8} spacing={3} justify="flex-end" alignItems="flex-end">
+            <Grid item><FacebookIcon fontSize="large"/></Grid>
+            <Grid item><TwitterIcon fontSize="large"/></Grid>
+            <Grid item><InstagramIcon fontSize="large"/></Grid>
+          </Grid>
+        </Grid>
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
         {sections.map((section) => (
@@ -63,6 +64,6 @@ export default function Header(props) {
           </Link>
         ))}
       </Toolbar>
-    </>
+    </AppBar>
   );
 }
