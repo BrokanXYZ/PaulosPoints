@@ -8,8 +8,14 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Header from '../components/Header.js';
 import LandingImage from '../components/LandingImage.js';
 import Footer from '../components/Footer.js';
+import OurMission from '../components/OurMission.js';
+import TakeAction from '../components/TakeAction/TakeAction.js';
+import OurTeam from '../components/OurTeam.js';
+import Contact from '../components/Contact.js';
+
 
 const theme = createMuiTheme({
+  spacing: factor => `${0.25 * factor}rem`, // (Bootstrap strategy)
   palette: {
     primary: {
       main: '#1976d2',
@@ -34,12 +40,10 @@ const theme = createMuiTheme({
 });
 
 const sections = [
-    { title: 'Our Mission', url: '#' },
-    { title: 'Apply', url: '#' },
-    { title: 'Donate', url: '#' },
-    { title: 'Our Team', url: '#' },
-    { title: 'Contact', url: '#' },
-    { title: 'FAQ', url: '#' },
+    { title: 'Our Mission', url: '#OurMission' },
+    { title: 'Take Action', url: '#TakeAction' },
+    { title: 'Our Team', url: '#OurTeam' },
+    { title: 'Contact', url: '#Contact' },
   ];
 
   const landingImageContent = {
@@ -65,6 +69,13 @@ export default function Index() {
           <Container maxWidth="lg">
               <main>
                   <LandingImage content={landingImageContent}/>
+                  <OurMission />
+                  <hr/>
+                  <TakeAction />
+                  <hr/>
+                  <OurTeam />
+                  <hr/>
+                  <Contact />
               </main>
           </Container>
           <Footer />
