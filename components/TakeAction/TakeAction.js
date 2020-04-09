@@ -9,10 +9,10 @@ import CallToAction from './CallToAction.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginBottom: theme.spacing(6)
+    marginTop: theme.spacing(15),
+    marginBottom: theme.spacing(15)
   },
   title: {
-    marginTop: theme.spacing(8),
     marginBottom: theme.spacing(4)
   },
 }));
@@ -26,10 +26,10 @@ export default function TakeAction(props) {
       <Typography variant="h3" className={classes.title}>Take Action</Typography>
       <Grid container spacing={10}>
         <Grid item xs={6}>
-          <CallToAction />
+          <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText}/>
         </Grid>
         <Grid item xs={6}>
-          <CallToAction />
+          <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} buttonText={content.callToAction2ButtonText}/>
         </Grid>
       </Grid>
     </Container>

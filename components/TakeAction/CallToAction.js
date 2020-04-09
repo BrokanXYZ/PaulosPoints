@@ -12,20 +12,20 @@ const useStyles = makeStyles({
 
 export default function CallToAction(props) {
   const classes = useStyles();
-  const { content } = props;
+  const { title, body, buttonText } = props;
 
   return (
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h5" gutterBottom>
-          Action Title
+          {title}
         </Typography>
         <Typography variant="body1">
-          Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          {body}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">{buttonText}</Button>
       </CardActions>
     </Card>
   );

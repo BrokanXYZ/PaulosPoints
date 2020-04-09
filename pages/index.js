@@ -39,7 +39,7 @@ const theme = createMuiTheme({
   },
 });
 
-const sections = [
+const headerSections = [
     { title: 'Our Mission', url: '#OurMission' },
     { title: 'Take Action', url: '#TakeAction' },
     { title: 'Our Team', url: '#OurTeam' },
@@ -52,6 +52,33 @@ const sections = [
     imgText: 'sky background',
   };
 
+  const ourMissionContent = {
+    missionStatement: 'This website was a collaborative effort between several of Paulo’s close friends. You will find information on contributing to Paulo’s Points, frequently asked questions, an application form, and a contact form. We hope that you are able to find everything you need. If you find problems with the site, or would like to provide us with feedback, please reach out to us using the contact us form. Thank you!',
+  }
+
+  const takeActionContent = {
+    callToAction1Title: 'Apply',
+    callToAction1Body: 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+    callToAction1ButtonText: 'Learn more',
+    callToAction2Title: 'Donate',
+    callToAction2Body: 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+    callToAction2ButtonText: 'Learn more',
+  }
+
+  const ourTeamContent = {
+    profiles: [
+      {
+        name: 'Brok Stafford',
+        role: 'Web Developer',
+        image: '/cardProfileImgs/brokProfile.jpg',
+        linkedIn: 'https://www.linkedin.com/in/brokanstafford/',        
+      },
+    ]
+  }
+
+  const contactContent = {
+
+  }
 
 export default function Index() {
     return (
@@ -65,17 +92,17 @@ export default function Index() {
         <CssBaseline />
 
         <ThemeProvider theme={theme}>
-          <Header title="Blog" sections={sections} />
+          <Header sections={headerSections} />
           <Container maxWidth="lg">
               <main>
                   <LandingImage content={landingImageContent}/>
-                  <OurMission />
+                  <OurMission content={ourMissionContent}/>
                   <hr/>
-                  <TakeAction />
+                  <TakeAction content={takeActionContent}/>
                   <hr/>
-                  <OurTeam />
+                  <OurTeam content={ourTeamContent}/>
                   <hr/>
-                  <Contact />
+                  <Contact content={contactContent}/>
               </main>
           </Container>
           <Footer />
