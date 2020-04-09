@@ -73,6 +73,36 @@ const headerSections = [
         image: '/cardProfileImgs/brokProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/brokanstafford/',        
       },
+      {
+        name: 'Alex Sangster',
+        role: 'Web Developer',
+        image: '/cardProfileImgs/alexProfile.jpg',
+        linkedIn: '',        
+      },
+      {
+        name: 'Jackson Beard',
+        role: 'Web Developer',
+        image: '/cardProfileImgs/jacksonProfile.jpg',
+        linkedIn: '',        
+      },
+      {
+        name: 'Ashraf Moursi',
+        role: 'Web Developer',
+        image: '/cardProfileImgs/ashrafProfile.jpg',
+        linkedIn: '',        
+      },
+      {
+        name: 'Dev Nair',
+        role: 'Web Developer',
+        image: '/cardProfileImgs/devProfile.jpg',
+        linkedIn: '',        
+      },
+      {
+        name: 'Ian Stone',
+        role: 'Web Developer',
+        image: '/cardProfileImgs/ianProfile.jpg',
+        linkedIn: '',        
+      },
     ]
   }
 
