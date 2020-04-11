@@ -23,7 +23,7 @@ export default function TakeAction(props) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Typography variant="h3" className={classes.title}>Take Action</Typography>
+      <Typography variant="h3" id="TakeAction" className={classes.title}>Take Action</Typography>
       <Grid container spacing={10}>
         <Grid item xs={6}>
           <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText}/>

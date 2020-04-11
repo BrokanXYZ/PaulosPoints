@@ -25,7 +25,7 @@ export default function CallToAction(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">{buttonText}</Button>
+        <Button size="small" href="/donate">{buttonText}</Button>
       </CardActions>
     </Card>
   );

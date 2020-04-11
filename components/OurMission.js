@@ -21,7 +21,7 @@ export default function OurMission(props) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Typography variant="h3" className={classes.title}>Our Mission</Typography>
+      <Typography variant="h3" id="OurMission" className={classes.title}>Our Mission</Typography>
       <Grid container>
         <Grid item xs={7}>
           <Typography variant="body1">

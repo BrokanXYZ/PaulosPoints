@@ -23,10 +23,10 @@ export default function OurTeam(props) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Typography variant="h3" className={classes.title}>Our Team</Typography>
+      <Typography variant="h3" id="OurTeam" className={classes.title}>Our Team</Typography>
       <Grid container direction="row">
         {content.profiles.map((profile) => (
-            <Grid item >
+            <Grid item key={profile.name}>
               {<ProfileCard
                 name={profile.name}
                 role={profile.role}
