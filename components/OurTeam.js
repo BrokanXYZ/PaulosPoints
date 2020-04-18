@@ -10,11 +10,17 @@ import ProfileCard from './ProfileCard.js';
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(15)
+    marginBottom: theme.spacing(15),
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
   },
+  bodyTextContainer: {
+    marginLeft: theme.spacing(0),
+  },
+  profileGrid: {
+    marginTop: theme.spacing(8),
+  }
 }));
 
 export default function OurTeam(props) {
@@ -24,7 +30,12 @@ export default function OurTeam(props) {
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Typography variant="h3" id="OurTeam" className={classes.title}>Our Team</Typography>
-      <Grid container direction="row">
+      <Container maxWidth="md" className={classes.bodyTextContainer}>
+        <Typography variant="body1" >
+          {content.bodyText}
+        </Typography>
+      </Container>
+      <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.profileGrid}>
         {content.profiles.map((profile) => (
             <Grid item key={profile.name}>
               {<ProfileCard

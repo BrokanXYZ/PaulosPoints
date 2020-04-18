@@ -24,14 +24,16 @@ export default function TakeAction(props) {
   return (
     <Container maxWidth="lg" className={classes.container}>
       <Typography variant="h3" id="TakeAction" className={classes.title}>Take Action</Typography>
-      <Grid container spacing={10}>
-        <Grid item xs={6}>
-          <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText}/>
+      <Container maxWidth="md">
+        <Grid container spacing={10} justify="center">
+          <Grid item xs={6}>
+            <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText}/>
+          </Grid>
+          <Grid item xs={6}>
+            <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} buttonText={content.callToAction2ButtonText}/>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} buttonText={content.callToAction2ButtonText}/>
-        </Grid>
-      </Grid>
+      </Container>
     </Container>
   );
 }
