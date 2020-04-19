@@ -6,11 +6,12 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
 import Layout from '../components/Layout/Layout.js';
-import DonateCard from '../components/DonateCard.js';
+import GiveMoneyCard from '../components/GiveMoneyCard.js';
+import GivePointsCard from '../components/GivePointsCard.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(4),
     marginBottom: theme.spacing(15)
   },
   title: {
@@ -22,14 +23,17 @@ export default function donate() {
   const classes = useStyles();
 
   return (
-    <Layout>
-      <Container maxWidth="lg" className={classes.container}>
+    <Layout currentPage="Donate">
+      <Container maxWidth="md" className={classes.container}>
         <Typography variant="h3" className={classes.title}>
           Donate
         </Typography>
-        <Grid container spacing={4}>
-          <Grid item>
-            <DonateCard />
+        <Grid container spacing={10} justify="center">
+          <Grid item xs={6}>
+            <GiveMoneyCard />
+          </Grid>
+          <Grid item xs={6}>
+            <GivePointsCard />
           </Grid>
         </Grid>
     </Container>

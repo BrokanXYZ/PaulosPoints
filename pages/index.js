@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Divider from '@material-ui/core/Divider';
+import { makeStyles } from '@material-ui/core/styles';
 
 import LandingImage from '../components/LandingImage.js';
 import OurMission from '../components/OurMission.js';
@@ -9,6 +10,11 @@ import OurTeam from '../components/OurTeam.js';
 import Contact from '../components/Contact.js';
 import Layout from '../components/Layout/Layout.js'
 
+const useStyles = makeStyles((theme) => ({
+  sectionDivider: {
+    backgroundColor: 'rgb(63, 81, 181, 0.35)'
+  },
+}));
 
   const landingImageContent = {
     title: 'The Paulo Claudio Foundation',
@@ -76,15 +82,17 @@ import Layout from '../components/Layout/Layout.js'
   }
 
 export default function Index() {
+    const classes = useStyles();
+
     return (
-      <Layout>
+      <Layout currentPage="Home">
         <LandingImage content={landingImageContent}/>
         <OurMission content={ourMissionContent}/>
-        <Divider variant="middle" />
+        <Divider variant="middle" className={classes.sectionDivider} />
         <TakeAction content={takeActionContent}/>
-        <Divider variant="middle" />
+        <Divider variant="middle" className={classes.sectionDivider} />
         <OurTeam content={ourTeamContent}/>
-        <Divider variant="middle" />
+        <Divider variant="middle" className={classes.sectionDivider} />
         <Contact content={contactContent}/>
       </Layout>    
     );

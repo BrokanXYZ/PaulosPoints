@@ -24,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
   toolbarSecondary: {
     justifyContent: 'space-between',
   },
-  toolbarLink: {
+  toolbarButton: {
+    padding: '3px',
+    flexShrink: 0,
+  },
+  currentPageToolBarButton: {
     padding: '3px',
     flexShrink: 0,
   },
@@ -46,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { sections } = props;
-
+  const { sections, currentPage } = props;
+  
   return (
     <AppBar position="sticky" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
@@ -66,10 +70,11 @@ export default function Header(props) {
         <Grid container spacing={5} justify="space-evenly">
           {sections.map((section) => (
             <Grid item key={section.title}>
-              <Button 
+              <Button
+                variant={section.title === currentPage ? "outlined" : "text"} 
                 key={section.title}
                 href={section.url}
-                className={classes.toolbarLink}
+                color="secondary"
               >
                 <Typography
                   variant="button"
