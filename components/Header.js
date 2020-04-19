@@ -65,7 +65,7 @@ export default function Header(props) {
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
         <Grid container spacing={5} justify="space-evenly">
           {sections.map((section) => (
-            <Grid item>
+            <Grid item key={section.title}>
               <Button 
                 key={section.title}
                 href={section.url}

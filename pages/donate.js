@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-import Layout from '../components/Layout.js';
+import Layout from '../components/Layout/Layout.js';
 import DonateCard from '../components/DonateCard.js';
 
 const useStyles = makeStyles((theme) => ({

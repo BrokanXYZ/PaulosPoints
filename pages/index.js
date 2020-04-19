@@ -7,7 +7,7 @@ import OurMission from '../components/OurMission.js';
 import TakeAction from '../components/TakeAction/TakeAction.js';
 import OurTeam from '../components/OurTeam.js';
 import Contact from '../components/Contact.js';
-import Layout from '../components/Layout.js'
+import Layout from '../components/Layout/Layout.js'
 
 
   const landingImageContent = {
