@@ -9,6 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import { Typography } from '@material-ui/core';
 
 
@@ -60,9 +61,21 @@ export default function Header(props) {
             <img className={classes.responsiveImage} src="/mainLogo.png" />
           </Grid>
           <Grid item container xs={8} spacing={3} justify="flex-end" alignItems="flex-end">
-            <Grid item><FacebookIcon fontSize="large" className={classes.facebookIcon}/></Grid>
-            <Grid item><TwitterIcon fontSize="large" className={classes.twitterIcon}/></Grid>
-            <Grid item><InstagramIcon fontSize="large" className={classes.instagramIcon}/></Grid>
+            <Grid item>
+              <IconButton href="https://www.facebook.com/Paulos-Points-113325360329282" target="_blank">
+                <FacebookIcon fontSize="large" className={classes.facebookIcon}/>
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <IconButton href="https://twitter.com/PauloFoundation" target="_blank">
+                <TwitterIcon fontSize="large" className={classes.twitterIcon}/>
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <IconButton href="https://www.instagram.com/paulospoints/?hl=en" target="_blank">
+                <InstagramIcon fontSize="large" className={classes.instagramIcon}/>
+              </IconButton>
+            </Grid>
           </Grid>
         </Grid>
       </Toolbar>

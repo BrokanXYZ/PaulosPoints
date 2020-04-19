@@ -30,10 +30,10 @@ export default function donate() {
         </Typography>
         <Grid container spacing={10} justify="center">
           <Grid item xs={6}>
-            <GiveMoneyCard />
+            <GivePointsCard />
           </Grid>
           <Grid item xs={6}>
-            <GivePointsCard />
+            <GiveMoneyCard />
           </Grid>
         </Grid>
     </Container>

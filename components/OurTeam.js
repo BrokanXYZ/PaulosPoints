@@ -40,7 +40,6 @@ export default function OurTeam(props) {
             <Grid item key={profile.name}>
               {<ProfileCard
                 name={profile.name}
-                role={profile.role}
                 image={profile.image}
                 linkedIn={profile.linkedIn}
               />}

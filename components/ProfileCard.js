@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 
 export default function ProfileCard(props) {
   const classes = useStyles();
-  const { name, role, image, linkedIn } = props;
+  const { name, image, linkedIn } = props;
 
   return (
     <Card className={classes.root}>
@@ -36,9 +36,6 @@ export default function ProfileCard(props) {
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {role}
           </Typography>
         </CardContent>
       <CardActions>

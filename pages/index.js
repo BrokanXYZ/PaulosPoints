@@ -40,37 +40,31 @@ const useStyles = makeStyles((theme) => ({
     profiles: [
       {
         name: 'Brok Stafford',
-        role: 'Web Developer',
         image: '/cardProfileImgs/brokProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/brokanstafford/',        
       },
       {
         name: 'Alex Sangster',
-        role: 'Web Developer',
         image: '/cardProfileImgs/alexProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/',        
       },
       {
         name: 'Jackson Beard',
-        role: 'Web Developer',
         image: '/cardProfileImgs/jacksonProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/jacksonbeard/',        
       },
       {
         name: 'Ashraf Moursi',
-        role: 'Web Developer',
         image: '/cardProfileImgs/ashrafProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/ashraf-moursi-a68461119/',        
       },
       {
         name: 'Dev Nair',
-        role: 'Web Developer',
         image: '/cardProfileImgs/devProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/dev-nair-230465162/',        
       },
       {
         name: 'Ian Stone',
-        role: 'Web Developer',
         image: '/cardProfileImgs/ianProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/',        
       },
