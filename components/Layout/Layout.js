@@ -15,6 +15,7 @@ const headerSections = [
     { title: 'Donate', url: '/donate' },
     { title: 'Blog', url: '/blog' },
     { title: 'FAQ', url: '/FAQ' },
+    { title: 'Contact', url: '/contact'}
 ];
 
 export default function Layout(props){

@@ -7,7 +7,6 @@ import LandingImage from '../components/LandingImage.js';
 import OurMission from '../components/OurMission.js';
 import TakeAction from '../components/TakeAction/TakeAction.js';
 import OurTeam from '../components/OurTeam.js';
-import Contact from '../components/Contact.js';
 import Layout from '../components/Layout/Layout.js'
 
 const useStyles = makeStyles((theme) => ({
@@ -71,10 +70,6 @@ const useStyles = makeStyles((theme) => ({
     ]
   }
 
-  const contactContent = {
-
-  }
-
 export default function Index() {
     const classes = useStyles();
 
@@ -86,8 +81,6 @@ export default function Index() {
         <TakeAction content={takeActionContent}/>
         <Divider variant="middle" className={classes.sectionDivider} />
         <OurTeam content={ourTeamContent}/>
-        <Divider variant="middle" className={classes.sectionDivider} />
-        <Contact content={contactContent}/>
       </Layout>    
     );
   }
