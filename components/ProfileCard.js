@@ -37,12 +37,10 @@ export default function ProfileCard(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
+          <IconButton href={linkedIn} target="_blank">
+            <LinkedInIcon fontSize="large" className={classes.linkedInIcon}/>
+          </IconButton>
         </CardContent>
-      <CardActions>
-        <IconButton href={linkedIn} target="_blank">
-          <LinkedInIcon fontSize="large" className={classes.linkedInIcon}/>
-        </IconButton>
-      </CardActions>
     </Card>
   );
 }

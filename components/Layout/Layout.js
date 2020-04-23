@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 
@@ -37,8 +38,9 @@ export default function Layout(props){
                     <main>
                         {props.children}
                     </main>
+                    <Divider variant="middle" />
+                    <Footer />
                 </Container>
-                <Footer />
             </ThemeProvider>
         </>
     );

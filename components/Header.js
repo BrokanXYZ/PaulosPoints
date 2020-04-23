@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from 'next/link'
+
 import { makeStyles } from '@material-ui/core/styles';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -17,13 +19,12 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: 'white'
   },
-  toolbar: {
-  },
   toolbarTitle: {
     flex: 1,
   },
   toolbarSecondary: {
     justifyContent: 'space-between',
+    backgroundColor: theme.palette.primary.main
   },
   toolbarButton: {
     padding: '3px',
@@ -47,6 +48,17 @@ const useStyles = makeStyles((theme) => ({
   instagramIcon: {
     color: 'black',
   },
+  currentPageLink: {
+    textDecorationColor: theme.palette.secondary.main
+  },
+  notCurrentPageLink: {
+    textDecoration: 'none'
+  },
+  headerText: {
+    '&:hover': {
+      color: theme.palette.primary.light
+   },
+  }
 }));
 
 export default function Header(props) {
@@ -83,19 +95,17 @@ export default function Header(props) {
         <Grid container spacing={5} justify="space-evenly">
           {sections.map((section) => (
             <Grid item key={section.title}>
-              <Button
-                variant={section.title === currentPage ? "outlined" : "text"} 
-                key={section.title}
-                href={section.url}
-                color="secondary"
-              >
-                <Typography
-                  variant="button"
-                  color="textPrimary"
-                >
-                  {section.title}
-                </Typography>
-              </Button>
+                <Link href={section.url}>
+                  <a className={ section.title === props.currentPage ? classes.currentPageLink : classes.notCurrentPageLink}>
+                    <Typography
+                      variant="subtitle1"
+                      color="textPrimary"
+                      className={classes.headerText}
+                    >
+                      {section.title}
+                    </Typography>
+                  </a>
+                </Link>
             </Grid>
           ))}
         </Grid>

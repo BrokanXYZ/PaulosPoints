@@ -15,7 +15,8 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    padding: '3px',
+    marginTop: '15px',
+    marginBottom: '25px'
   },
 }));
 
