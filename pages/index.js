@@ -72,6 +72,6 @@ export default function Index() {
         <TakeAction content={takeActionContent}/>
         <Divider variant="middle" />
         <OurTeam content={ourTeamContent}/>
-      </Layout>    
+      </Layout>
     );
   }

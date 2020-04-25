@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: theme.spacing(4)
   },
+  responsiveImage: {
+    width: '250px',
+    height: 'auto',
+    marginLeft: '15px'
+  },
 }));
 
 export default function OurMission(props) {
@@ -21,15 +26,18 @@ export default function OurMission(props) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Typography variant="h3" id="OurMission" className={classes.title}>Our Mission</Typography>
+      
       <Grid container>
-        <Grid item xs={7}>
+        <Grid item container direction="column" xs={7}>
+          <Typography variant="h3" id="OurMission" className={classes.title}>
+            Our Mission
+          </Typography>
           <Typography variant="body1">
             {content.missionStatement}
           </Typography>
         </Grid>
         <Grid item xs={5}>
-          
+          <img className={classes.responsiveImage} src="/pauloCircle.png" />
         </Grid>
       </Grid>
     </Container>

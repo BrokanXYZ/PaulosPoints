@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   responsiveImage: {
     marginTop: theme.spacing(2),
-    width: '100%',
+    width: '178px',
     height: 'auto',
   },
   facebookIcon: {
@@ -49,15 +49,25 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
   },
   currentPageLink: {
-    textDecorationColor: theme.palette.secondary.main
+    textDecoration: 'none',
+    color: theme.palette.secondary.main,
   },
   notCurrentPageLink: {
+    color: 'black',
     textDecoration: 'none'
   },
-  headerText: {
+  headerTextNotCurrentPage: {
     '&:hover': {
-      color: theme.palette.primary.light
-   },
+      color: theme.palette.secondary.main
+    },
+  },
+  headerTextCurrentPage: {
+    '&:hover': {
+      color: theme.palette.secondary.dark
+    },
+  },
+  sectionHeaderContainer: {
+    marginTop: '21px'
   }
 }));
 
@@ -68,11 +78,31 @@ export default function Header(props) {
   return (
     <AppBar position="sticky" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
-        <Grid container spacing={0}>
-          <Grid item xs={4}>
+        <Grid container spacing={0} justify="space-between">
+
+          <Grid item>
             <img className={classes.responsiveImage} src="/mainLogo.png" />
           </Grid>
-          <Grid item container xs={8} spacing={3} justify="flex-end" alignItems="flex-end">
+
+          <Grid item container xs={5} spacing={2} justify="space-evenly" className={classes.sectionHeaderContainer}>
+            {sections.map((section) => (
+              <Grid item key={section.title}>
+                <Link href={section.url}>
+                  <a className={ section.title === currentPage ? classes.currentPageLink : classes.notCurrentPageLink }>
+                    <Typography
+                      variant="button"
+                      color="inherit"
+                      className={ section.title === currentPage ? classes.headerTextCurrentPage : classes.headerTextNotCurrentPage }
+                    >
+                      {section.title}
+                    </Typography>
+                  </a>
+                </Link>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Grid item container xs={3} spacing={0} justify="flex-end" alignItems="flex-end">
             <Grid item>
               <IconButton href="https://www.facebook.com/Paulos-Points-113325360329282" target="_blank">
                 <FacebookIcon fontSize="large" className={classes.facebookIcon}/>
@@ -89,25 +119,7 @@ export default function Header(props) {
               </IconButton>
             </Grid>
           </Grid>
-        </Grid>
-      </Toolbar>
-      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-        <Grid container spacing={5} justify="space-evenly">
-          {sections.map((section) => (
-            <Grid item key={section.title}>
-                <Link href={section.url}>
-                  <a className={ section.title === props.currentPage ? classes.currentPageLink : classes.notCurrentPageLink}>
-                    <Typography
-                      variant="subtitle1"
-                      color="textPrimary"
-                      className={classes.headerText}
-                    >
-                      {section.title}
-                    </Typography>
-                  </a>
-                </Link>
-            </Grid>
-          ))}
+
         </Grid>
       </Toolbar>
     </AppBar>
