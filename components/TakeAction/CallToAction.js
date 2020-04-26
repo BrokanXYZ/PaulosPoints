@@ -28,7 +28,14 @@ export default function CallToAction(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" href={pageLink}>{buttonText}</Button>
+        <Button 
+          size="small" 
+          href={pageLink}
+          variant="contained"
+          color="secondary"
+        >
+          {buttonText}
+        </Button>
       </CardActions>
     </Card>
   );

@@ -10,7 +10,7 @@ import Layout from '../components/Layout/Layout.js';
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(15)
+    marginBottom: theme.spacing(10)
   },
   title: {
     marginBottom: theme.spacing(4)

@@ -18,6 +18,18 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
     marginLeft: '15px'
   },
+  missionStatement: {
+    fontSize: '1.2rem'
+  },
+  slogan: {
+    color: theme.palette.secondary.main,
+    fontSize: '1.5rem',
+    fontStyle: 'italic',
+    paddingTop: '20px',
+  },
+  sloganDiv: {
+    textAlign: 'center'
+  }
 }));
 
 export default function OurMission(props) {
@@ -28,12 +40,21 @@ export default function OurMission(props) {
     <Container maxWidth="md" className={classes.container}>
       <Grid container>
         <Grid item container direction="column" xs={7}>
-          <Typography variant="h3" id="OurMission" className={classes.title}>
-            Our Mission
-          </Typography>
-          <Typography variant="body1">
-            {content.missionStatement}
-          </Typography>
+          <Grid item>
+            <Typography variant="h3" id="OurMission" className={classes.title}>
+              Our Mission
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1" className={classes.missionStatement}>
+              {content.missionStatement}
+            </Typography>
+          </Grid>
+          <Grid item className={classes.sloganDiv}>
+            <Typography variant="subtitle1" color="inherit" className={classes.slogan}>
+              Saving lives one mile at a time
+            </Typography>
+          </Grid>
         </Grid>
         <Grid item xs={5}>
           <img className={classes.responsiveImage} src="/pauloCircle.png" />
