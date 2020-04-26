@@ -5,12 +5,20 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  callToActionCard: {
+    height: '200px',
+  },
+}));
 
 export default function CallToAction(props) {
-  const { title, body, buttonText } = props;
+  const classes = useStyles();
+  const { title, body, buttonText, pageLink } = props;
 
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" className={classes.callToActionCard}>
       <CardContent>
         <Typography variant="h5" gutterBottom>
           {title}
@@ -20,7 +28,7 @@ export default function CallToAction(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" href="/donate">{buttonText}</Button>
+        <Button size="small" href={pageLink}>{buttonText}</Button>
       </CardActions>
     </Card>
   );

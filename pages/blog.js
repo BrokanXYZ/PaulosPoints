@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function apply() {
+export default function blog() {
   const classes = useStyles();
 
   return (
-    <Layout currentPage="Apply">
+    <Layout currentPage="Blog">
       <Container maxWidth="md" className={classes.container}>
         THIS PAGE IS UNDER CONSTRUCTION!
     </Container>

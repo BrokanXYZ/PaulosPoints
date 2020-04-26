@@ -27,10 +27,10 @@ export default function TakeAction(props) {
       <Container maxWidth="md">
         <Grid container spacing={10} justify="center">
           <Grid item xs={6}>
-            <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText}/>
+            <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText} pageLink="/apply"/>
           </Grid>
           <Grid item xs={6}>
-            <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} buttonText={content.callToAction2ButtonText}/>
+            <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} buttonText={content.callToAction2ButtonText} pageLink="/donate"/>
           </Grid>
         </Grid>
       </Container>

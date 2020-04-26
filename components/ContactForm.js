@@ -11,9 +11,15 @@ import FormControl from '@material-ui/core/FormControl';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        marginTop: theme.spacing(15),
-        marginBottom: theme.spacing(15)
+        marginTop: theme.spacing(10),
+        marginBottom: theme.spacing(10)
     },
+    contactFormGrid:{
+        padding: '15px'
+    },
+    inputPadding:{
+        marginBottom: theme.spacing(3)
+    }
 }));
 
 export default function ContactForm(props) {
@@ -22,28 +28,32 @@ export default function ContactForm(props) {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-        <Paper elevation={3}>
-            <Typography>Send us a message!</Typography>
-            <Grid container spacing={2}>
+        <Paper elevation={2}>
+            <Grid container spacing={2} className={classes.contactFormGrid}>
                 <Grid item xs={6}>
                     <TextField
                         required
                         label="First Name"
-                        variant="filled"
+                        variant="outlined"
+                        color="secondary"
+                        className={classes.inputPadding}
                     />
                 </Grid>
                 <Grid item xs={6}>
                     <TextField
                         required
                         label="Last Name"
-                        variant="filled"
+                        variant="outlined"
+                        color="secondary"
                     />
                 </Grid>
                 <Grid item xs={12}>
                     <TextField
                         required
                         label="Email"
-                        variant="filled"
+                        variant="outlined"
+                        color="secondary"
+                        className={classes.inputPadding}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -51,15 +61,22 @@ export default function ContactForm(props) {
                         <TextField
                             required
                             label="Message"
-                            variant="outlined"
+                            variant="filled"
                             multiline
                             rows="15"
-                            
+                            color="secondary"
+                            className={classes.inputPadding}
                         />
                     </FormControl>
                 </Grid>
                 <Grid item>
-                    <Button>Send</Button>
+                    <Button
+                        size="large"
+                        variant="contained"
+                        color="primary"
+                    >
+                        Send
+                    </Button>
                 </Grid>
             </Grid>
         </Paper>
