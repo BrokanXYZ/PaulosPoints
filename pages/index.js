@@ -15,7 +15,7 @@ import Layout from '../components/Layout/Layout.js'
   };
 
   const ourMissionContent = {
-    missionStatement: 'Paulo’s Points is a non-profit organization whose mission is to use generous donations of frequent flier miles and money to give families access to flights that are often necessary for those afflicted with serious medical needs.',
+    missionStatement: 'Paulo’s Points is a non-profit organization whose mission is to use generous donations of frequent flier miles and points for the transportation and housing needs of patients with life threatening medical conditions.',
   }
 
   const takeActionContent = {

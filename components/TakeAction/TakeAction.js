@@ -22,7 +22,7 @@ export default function TakeAction(props) {
   const { content } = props;
 
   return (
-    <Container maxWidth="lg" className={classes.container}>
+    <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="TakeAction" className={classes.title}>Take Action</Typography>
       <Container maxWidth="md">
         <Grid container spacing={10} justify="center">

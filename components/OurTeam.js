@@ -28,7 +28,7 @@ export default function OurTeam(props) {
   const { content } = props;
 
   return (
-    <Container maxWidth="lg" className={classes.container}>
+    <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="OurTeam" className={classes.title}>Our Team</Typography>
       <Container maxWidth="md" className={classes.bodyTextContainer}>
         <Typography variant="body1" >

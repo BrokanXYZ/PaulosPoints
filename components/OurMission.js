@@ -25,8 +25,7 @@ export default function OurMission(props) {
   const { content } = props;
 
   return (
-    <Container maxWidth="lg" className={classes.container}>
-      
+    <Container maxWidth="md" className={classes.container}>
       <Grid container>
         <Grid item container direction="column" xs={7}>
           <Typography variant="h3" id="OurMission" className={classes.title}>
