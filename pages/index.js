@@ -20,10 +20,10 @@ import Layout from '../components/Layout/Layout.js'
 
   const takeActionContent = {
     callToAction1Title: 'Apply',
-    callToAction1Body: 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+    callToAction1Body: 'In need of housing or transportation for treatment of a life threatening medical condition? Find out more about how Paulo’s Points can help you here.',
     callToAction1ButtonText: 'Learn more',
     callToAction2Title: 'Donate',
-    callToAction2Body: 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+    callToAction2Body: 'Make a one time or recurring donation to the Paulo’s Points foundation here.',
     callToAction2ButtonText: 'Learn more',
   }
 
