@@ -27,7 +27,7 @@ export default function donate() {
           Contact
         </Typography>
         <ContactForm />
-    </Container>
+      </Container>
     </Layout>
   );
 }
