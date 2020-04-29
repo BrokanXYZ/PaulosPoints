@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme) => ({
   responsiveImage: {
     width: '250px',
     height: 'auto',
-    marginLeft: '15px'
+    marginLeft: '40px'
   },
   missionStatement: {
-    fontSize: '1.2rem'
+    fontSize: '1.2rem',
+    textAlign: 'justify'
   },
   slogan: {
     color: theme.palette.secondary.main,
