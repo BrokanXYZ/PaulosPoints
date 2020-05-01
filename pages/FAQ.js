@@ -2,9 +2,17 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Link from '@material-ui/core/Link';
+
+import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 
 import FaqSection from '../components/FaqSection.js';
 import Layout from '../components/Layout/Layout.js';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(10)
-},
+  },
 }));
 
 const faqSections = [
@@ -25,12 +33,89 @@ const faqSections = [
     entries: [
       {
         question: "Who is qualified for assistance?",
-        answer: "Cancer patients who are financially challenged and have to travel to other cities for the necessary treatments."
+        answer: 
+          <Typography variant="body2">
+            Cancer patients who are financially challenged and have to travel to other cities for the necessary treatments.
+          </Typography>
       },
       {
         question: "Does your organization pay for Air Ambulance Services?",
-        answer: "Currently, our organization can assist you for the following regular commercial airlines: (Can we get a listing of the airlines we are connected with here)"
+        answer: 
+          <Typography variant="body2">
+            Currently, our organization can assist you for the following regular commercial airlines:
+            <List>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="United Airlines" />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="Southwest Airlines" />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="American Airlines" />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="Delta Airlines" />
+              </ListItem>
+            </List>
+          </Typography>
       },
+      {
+        question: "What hotels can your organization assist with?",
+        answer: 
+          <Typography variant="body2">
+            We can currently provide support with the following hotels:
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Marriott" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Holiday Inn" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Comfort Inn" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Best Western" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Wyndham" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Hilton" />
+            </ListItem>
+          </List>
+        </Typography>
+      }
     ]
   },
   {
@@ -38,23 +123,38 @@ const faqSections = [
     entries: [
       {
         question: "How can we donate points from airlines and Hotels?",
-        answer: "The Foundation has membership accounts set up for most airlines (maybe list these here) and hotels (list these as well). The account/membership numbers are listed on our website (maybe hyperlink the word ‘website’ to redirect to that part of the website if possible) \n You will contact the hotels and airlines yourself in order to transfer / donate your points to The Foundation’s accounts. There could be a small charge amount from the airlines / hotels to process any transfers. Be sure to inquire about this if you call your respective airline / hotel."
+        answer: 
+          <Typography variant="body2">
+            **Todo**
+          </Typography>
       },
       {
         question: "Is it possible to just donate money?",
-        answer: "Yes! We will use the money to buy airline tickets, hotel lodging, as well as ground transportation for patients."
+        answer: 
+          <Typography variant="body2">
+            Yes! We will use the money to buy airline tickets, hotel lodging, as well as ground transportation for patients.
+          </Typography>
       },
       {
         question: "How can we donate money?",
-        answer: "You can find that specific donation method ‘here’ on our website. (For this, maybe hyperlink the word ‘here’ to redirect to that part of our website to help out the user if possible)"
+        answer: 
+          <Typography variant="body2">
+            You can find that specific donation method <Link href="/donate" color="secondary">here</Link> on our website.
+          </Typography>
       },
       {
         question: "Is it possible for my donation to remain anonymous?",
-        answer: "Yes! When you choose any form of donation method, you will not be required to enter your First or Last Name unless you choose to."
+        answer: 
+          <Typography variant="body2">
+            Yes! When you choose any form of donation method, you will not be required to enter your First or Last Name unless you choose to.
+          </Typography>
       },
       {
         question: "Instead of just one donation amount, is it possible to donate a portion monthly / recurring?",
-        answer: "Yes! If you find you do not wish to donate a larger portion at once, there is the option to donate a monthly amount (minimum $5?) which would pull from your desired payment method (maybe their debit / credit card or possibly a checkings / savings account if there is an option to link to their bank accounts with the Account and Routing Numbers. I’m not actually sure if that is a good idea for us to link a donator’s bank account into our website. If not, then we can always just limit their recurring monthly charges to their credit / debit cards since that seems a bit more safe than having someone else’s bank account info on our website.)"
+        answer: 
+          <Typography variant="body2">
+            Yes! If you find you do not wish to donate a larger portion at once, there is the option to donate a monthly amount which would pull from your desired payment method.
+          </Typography>
       },
     ]
   },

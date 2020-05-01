@@ -29,10 +29,8 @@ export default function FaqEntry(props) {
                 {question}
             </Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-            <Typography variant="body2" className={classes.answerText}>
-                {answer}
-            </Typography>
+        <ExpansionPanelDetails className={classes.answerText}>
+            {answer}
         </ExpansionPanelDetails>
     </ExpansionPanel>
     );
