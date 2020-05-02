@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   bodyTextContainer: {
-    textAlign: 'justify'
+    textAlign: 'left'
   },
 }));
 

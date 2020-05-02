@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   bodyTextContainer: {
-    textAlign: 'justify'
+    textAlign: 'left'
   },
   profileGrid: {
     marginTop: theme.spacing(8),
@@ -40,8 +40,10 @@ export default function OurTeam(props) {
             <Grid item key={profile.name}>
               {<ProfileCard
                 name={profile.name}
+                role={profile.role}
                 image={profile.image}
                 linkedIn={profile.linkedIn}
+                gitHub={profile.gitHub}
               />}
             </Grid>
         ))}

@@ -31,33 +31,45 @@ import Layout from '../components/Layout/Layout.js'
     profiles: [
       {
         name: 'Brok Stafford',
+        role: 'Web Developer',
         image: '/cardProfileImgs/brokProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/brokanstafford/',        
+        linkedIn: 'https://www.linkedin.com/in/brokanstafford/',
+        gitHub: 'https://github.com/BrokanXYZ',       
       },
       {
         name: 'Alex Sangster',
+        role: '',
         image: '/cardProfileImgs/alexProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/',        
+        linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/',
+        gitHub: '', 
       },
       {
         name: 'Jackson Beard',
+        role: '',
         image: '/cardProfileImgs/jacksonProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/jacksonbeard/',        
+        linkedIn: 'https://www.linkedin.com/in/jacksonbeard/',
+        gitHub: '',
       },
       {
         name: 'Ashraf Moursi',
+        role: '',
         image: '/cardProfileImgs/ashrafProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/ashraf-moursi-a68461119/',        
+        linkedIn: 'https://www.linkedin.com/in/ashraf-moursi-a68461119/',
+        gitHub: '',      
       },
       {
         name: 'Dev Nair',
+        role: '',
         image: '/cardProfileImgs/devProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/dev-nair-230465162/',        
+        linkedIn: 'https://www.linkedin.com/in/dev-nair-230465162/',
+        gitHub: '',   
       },
       {
         name: 'Ian Stone',
+        role: '',
         image: '/cardProfileImgs/ianProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/',        
+        linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/',
+        gitHub: '',   
       },
     ]
   }

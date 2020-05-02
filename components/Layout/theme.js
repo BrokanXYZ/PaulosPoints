@@ -4,9 +4,9 @@ const theme = createMuiTheme({
     spacing: factor => `${0.25 * factor}rem`, // (Bootstrap strategy)
     palette: {
       primary: {
-        main: '#bbdefb',
-        light: '#eeffff',
-        dark: '#8aacc8',
+        main: '#005cff',
+        //light: '#eeffff',
+        //dark: '#8aacc8',
         // contrastText: will be calculated to contrast with palette.primary.main
       },
       secondary: {

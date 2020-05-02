@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionHeaderContainer: {
     marginTop: '21px'
-  }
+  },
 }));
 
 export default function Header(props) {
@@ -81,7 +81,9 @@ export default function Header(props) {
         <Grid container spacing={0} justify="space-between">
 
           <Grid item>
-            <img className={classes.responsiveImage} src="/mainLogo.png" />
+            <Link href="/index">
+              <img className={classes.responsiveImage} style={{cursor: 'pointer'}} src="/mainLogo.png" />
+            </Link>
           </Grid>
 
           <Grid item container xs={5} spacing={2} justify="space-evenly" className={classes.sectionHeaderContainer}>

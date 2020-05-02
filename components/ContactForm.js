@@ -17,7 +17,23 @@ const useStyles = makeStyles((theme) => ({
     contactFormGrid:{
         padding: '15px'
     },
-    inputPadding:{
+    firstNameInput:{
+        width: '100%',
+        marginBottom: theme.spacing(3)
+    },
+    lastNameInput: {
+        width: '100%',
+        marginBottom: theme.spacing(3)
+    },
+    emailInput: {
+        width: '100%',
+        marginBottom: theme.spacing(3)
+    },
+    contactText: {
+        fontSize: "18px",
+        padding: theme.spacing(3)
+    },
+    messageInput: {
         marginBottom: theme.spacing(3)
     }
 }));
@@ -30,42 +46,47 @@ export default function ContactForm(props) {
     <Container maxWidth="lg" className={classes.container}>
         <Paper elevation={2}>
             <Grid container spacing={2} className={classes.contactFormGrid}>
+
                 <Grid item xs={6}>
+                    <Typography variant="body1" className={classes.contactText}>
+                        Have a question, comment, or concern? Send us a message by filling out this form! Our team will respond back to you within 24hrs of receiving your message!
+                    </Typography>
+                </Grid>
+
+                <Grid item xs={6} direction="column">
                     <TextField
                         required
                         label="First Name"
                         variant="outlined"
                         color="secondary"
-                        className={classes.inputPadding}
+                        className={classes.firstNameInput}
                     />
-                </Grid>
-                <Grid item xs={6}>
                     <TextField
                         required
                         label="Last Name"
                         variant="outlined"
                         color="secondary"
+                        className={classes.lastNameInput}
                     />
-                </Grid>
-                <Grid item xs={12}>
                     <TextField
                         required
                         label="Email"
                         variant="outlined"
                         color="secondary"
-                        className={classes.inputPadding}
+                        className={classes.emailInput}
                     />
                 </Grid>
+                    
                 <Grid item xs={12}>
-                    <FormControl fullWidth className={classes.margin}>
+                    <FormControl fullWidth>
                         <TextField
                             required
                             label="Message"
                             variant="filled"
                             multiline
-                            rows="15"
+                            rows="10"
                             color="secondary"
-                            className={classes.inputPadding}
+                            className={classes.messageInput}
                         />
                     </FormControl>
                 </Grid>
