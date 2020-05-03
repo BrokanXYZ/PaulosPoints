@@ -2,16 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © Paulo\'s Points '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -26,7 +17,16 @@ export default function Footer(props) {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Copyright />
+        <Typography variant="body2" color="textSecondary" align="center">
+          {'Copyright © Paulo\'s Points '}
+          {new Date().getFullYear()}
+          {'.'}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" align="center">
+          <Link href="/privacyPolicy">
+            Privacy policy
+          </Link>
+        </Typography>
       </Container>
     </footer>
   );

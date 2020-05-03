@@ -10,7 +10,7 @@ import Link from '@material-ui/core/Link';
 
 import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 
-import FaqSection from '../components/FaqSection.js';
+import FaqSection from '../components/FaqSection/FaqSection.js';
 import Layout from '../components/Layout/Layout.js';
 
 

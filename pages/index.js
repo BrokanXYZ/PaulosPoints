@@ -1,12 +1,14 @@
 import React from 'react';
 
 import Divider from '@material-ui/core/Divider';
+import Link from '@material-ui/core/Link';
 
 import OurMission from '../components/OurMission.js';
 import AboutUs from '../components/AboutUs.js';
 import TakeAction from '../components/TakeAction/TakeAction.js';
 import OurTeam from '../components/OurTeam.js';
 import Layout from '../components/Layout/Layout.js'
+import BlogHome from '../components/BlogHome/BlogHome.js';
 
 
   const ourMissionContent = {
@@ -19,11 +21,9 @@ import Layout from '../components/Layout/Layout.js'
   
   const takeActionContent = {
     callToAction1Title: 'Apply',
-    callToAction1Body: 'In need of housing or transportation for treatment of a life threatening medical condition? Find out more about how Paulo’s Points can help you here.',
-    callToAction1ButtonText: 'Learn more',
+    callToAction1Body: <>In need of housing or transportation for treatment of a life threatening medical condition? We are currently working on our application process, but feel free to <Link href="/contact" color="secondary">contact us</Link> in the meantime! We will immediately notify you when we are ready.</>,
     callToAction2Title: 'Donate',
-    callToAction2Body: 'Make a one time or recurring donation to the Paulo’s Points foundation here.',
-    callToAction2ButtonText: 'Learn more',
+    callToAction2Body: 'Want to donate airline miles, hotel points, or money to our cause? Click here to make a one time or recurring donation to the Paulo’s Points foundation.',
   }
 
   const ourTeamContent = {
@@ -38,37 +38,37 @@ import Layout from '../components/Layout/Layout.js'
       },
       {
         name: 'Alex Sangster',
-        role: '',
+        role: 'Response Team',
         image: '/cardProfileImgs/alexProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/',
         gitHub: '', 
       },
       {
         name: 'Jackson Beard',
-        role: '',
+        role: 'Response Team',
         image: '/cardProfileImgs/jacksonProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/jacksonbeard/',
         gitHub: '',
       },
       {
+        name: 'Ian Stone',
+        role: 'Response Team',
+        image: '/cardProfileImgs/ianProfile.jpg',
+        linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/',
+        gitHub: '',   
+      },
+      {
         name: 'Ashraf Moursi',
-        role: '',
+        role: 'Social Media',
         image: '/cardProfileImgs/ashrafProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/ashraf-moursi-a68461119/',
         gitHub: '',      
       },
       {
         name: 'Dev Nair',
-        role: '',
+        role: 'Outreach',
         image: '/cardProfileImgs/devProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/dev-nair-230465162/',
-        gitHub: '',   
-      },
-      {
-        name: 'Ian Stone',
-        role: '',
-        image: '/cardProfileImgs/ianProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/',
         gitHub: '',   
       },
     ]
@@ -83,6 +83,8 @@ export default function Index() {
         <AboutUs content={aboutUsContent}/>
         <Divider variant="middle" />
         <TakeAction content={takeActionContent}/>
+        <Divider variant="middle" />
+        <BlogHome />
         <Divider variant="middle" />
         <OurTeam content={ourTeamContent}/>
       </Layout>

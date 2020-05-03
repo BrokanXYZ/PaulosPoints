@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
 
 import GetAppIcon from '@material-ui/icons/GetApp';
 
@@ -35,9 +36,9 @@ export default function apply() {
           Apply
         </Typography>
         <Typography variant="body1">
-          Application instructions should go right in the space right here lol!
+          We are currently working on our application process. If you are interested in receiving support, then please send us a message via our <Link href="/contact" color="secondary">contact page</Link>. We will notify you when we are ready.
         </Typography>
-        <Button variant="contained" color="secondary" className={classes.downloadButton}>
+        <Button disabled variant="contained" color="secondary" className={classes.downloadButton}>
           <GetAppIcon className={classes.getAppIcon}/>
           <Typography variant="button">
             Download Application
