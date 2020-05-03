@@ -125,7 +125,7 @@ const faqSections = [
         question: "How can we donate points from airlines and Hotels?",
         answer: 
           <Typography variant="body2">
-            **Todo**
+            We are currently working on fleshing out this process. At the moment we are collecting information on willing donors. Please fill out the form on our <Link href="/donate" color="secondary">donate page</Link> if you want to donate airline or hotel points.
           </Typography>
       },
       {
