@@ -10,9 +10,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import { Typography } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';  
 
 
 const useStyles = makeStyles((theme) => ({
@@ -74,56 +74,68 @@ const useStyles = makeStyles((theme) => ({
 export default function Header(props) {
   const classes = useStyles();
   const { sections, currentPage } = props;
+
+  const isMobile = useMediaQuery('(min-width:600px)');
   
-  return (
-    <AppBar position="sticky" className={classes.appBar}>
-      <Toolbar className={classes.toolbar}>
-        <Grid container spacing={0} justify="space-between">
+  console.log(isMobile);
 
-          <Grid item>
-            <Link href="/index">
-              <img className={classes.responsiveImage} style={{cursor: 'pointer'}} src="/mainLogo.png" />
-            </Link>
-          </Grid>
+  if(isMobile){
+    return(
+      <></>
+    );
+  }
+  else
+  {
+    return (
+      <AppBar position="sticky" className={classes.appBar}>
+        <Toolbar className={classes.toolbar}>
+          <Grid container spacing={0} justify="space-between">
 
-          <Grid item container xs={5} spacing={2} justify="space-evenly" className={classes.sectionHeaderContainer}>
-            {sections.map((section) => (
-              <Grid item key={section.title}>
-                <Link href={section.url}>
-                  <a className={ section.title === currentPage ? classes.currentPageLink : classes.notCurrentPageLink }>
-                    <Typography
-                      variant="button"
-                      color="inherit"
-                      className={ section.title === currentPage ? classes.headerTextCurrentPage : classes.headerTextNotCurrentPage }
-                    >
-                      {section.title}
-                    </Typography>
-                  </a>
-                </Link>
+            <Grid item>
+              <Link href="/index">
+                <img className={classes.responsiveImage} style={{cursor: 'pointer'}} src="/mainLogo.png" />
+              </Link>
+            </Grid>
+
+            <Grid item container xs={5} spacing={2} justify="space-evenly" className={classes.sectionHeaderContainer}>
+              {sections.map((section) => (
+                <Grid item key={section.title}>
+                  <Link href={section.url}>
+                    <a className={ section.title === currentPage ? classes.currentPageLink : classes.notCurrentPageLink }>
+                      <Typography
+                        variant="button"
+                        color="inherit"
+                        className={ section.title === currentPage ? classes.headerTextCurrentPage : classes.headerTextNotCurrentPage }
+                      >
+                        {section.title}
+                      </Typography>
+                    </a>
+                  </Link>
+                </Grid>
+              ))}
+            </Grid>
+
+            <Grid item container xs={3} spacing={0} justify="flex-end" alignItems="flex-end">
+              <Grid item>
+                <IconButton href="https://www.facebook.com/Paulos-Points-113325360329282" target="_blank">
+                  <FacebookIcon fontSize="large" className={classes.facebookIcon}/>
+                </IconButton>
               </Grid>
-            ))}
-          </Grid>
+              <Grid item>
+                <IconButton href="https://twitter.com/PauloFoundation" target="_blank">
+                  <TwitterIcon fontSize="large" className={classes.twitterIcon}/>
+                </IconButton>
+              </Grid>
+              <Grid item>
+                <IconButton href="https://www.instagram.com/paulospoints/?hl=en" target="_blank">
+                  <InstagramIcon fontSize="large" className={classes.instagramIcon}/>
+                </IconButton>
+              </Grid>
+            </Grid>
 
-          <Grid item container xs={3} spacing={0} justify="flex-end" alignItems="flex-end">
-            <Grid item>
-              <IconButton href="https://www.facebook.com/Paulos-Points-113325360329282" target="_blank">
-                <FacebookIcon fontSize="large" className={classes.facebookIcon}/>
-              </IconButton>
-            </Grid>
-            <Grid item>
-              <IconButton href="https://twitter.com/PauloFoundation" target="_blank">
-                <TwitterIcon fontSize="large" className={classes.twitterIcon}/>
-              </IconButton>
-            </Grid>
-            <Grid item>
-              <IconButton href="https://www.instagram.com/paulospoints/?hl=en" target="_blank">
-                <InstagramIcon fontSize="large" className={classes.instagramIcon}/>
-              </IconButton>
-            </Grid>
           </Grid>
-
-        </Grid>
-      </Toolbar>
-    </AppBar>
-  );
+        </Toolbar>
+      </AppBar>
+    );
+  }
 }
