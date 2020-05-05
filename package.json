@@ -23,6 +23,7 @@
     "@material-ui/icons": "^4.9.1",
     "emailjs-com": "^2.4.1",
     "next": "^9.3.4",
+    "next-useragent": "^2.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

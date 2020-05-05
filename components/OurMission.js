@@ -22,11 +22,22 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.2rem',
     textAlign: 'justify'
   },
+  missionStatementMobile: {
+    fontSize: '1rem',
+    textAlign: 'justify'
+  },
   slogan: {
     color: theme.palette.secondary.main,
     fontSize: '1.5rem',
     fontStyle: 'italic',
     paddingTop: '20px',
+  },
+  sloganMobile: {
+    color: theme.palette.secondary.main,
+    fontSize: '1.25rem',
+    fontStyle: 'italic',
+    paddingTop: '10px',
+    paddingBottom: '15px'
   },
   sloganDiv: {
     textAlign: 'center'
@@ -35,29 +46,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function OurMission(props) {
   const classes = useStyles();
-  const { content } = props;
+  const { content, isMobile } = props;
 
   return (
     <Container maxWidth="md" className={classes.container}>
       <Grid container>
-        <Grid item container direction="column" xs={7}>
+        <Grid item container direction="column" xs={12  } sm={7}>
           <Grid item>
             <Typography variant="h3" id="OurMission" className={classes.title}>
               Our Mission
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1" className={classes.missionStatement}>
+            <Typography variant="body1" className={ isMobile ? classes.missionStatementMobile: classes.missionStatement}>
               {content.missionStatement}
             </Typography>
           </Grid>
           <Grid item className={classes.sloganDiv}>
-            <Typography variant="subtitle1" color="inherit" className={classes.slogan}>
+            <Typography variant="subtitle1" color="inherit" className={ isMobile ? classes.sloganMobile : classes.slogan}>
               Saving lives one mile at a time
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} sm={5}>
           <img className={classes.responsiveImage} src="/pauloCircle.png" />
         </Grid>
       </Grid>

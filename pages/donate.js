@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { withUserAgent } from 'next-useragent';
+
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -65,13 +67,16 @@ function getContent(donationType, setDonationType){
   }
 }
 
-export default function donate() {
+function donate(props) {
   const classes = useStyles();
+  const { ua, useragent } = props;
 
   const [donationType, setDonationType] = useState("none");
 
+  const isMobile = ua.isMobile;
+  
   return (
-    <Layout currentPage="Donate">
+    <Layout currentPage="Donate" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
         <Typography variant="h3" className={classes.title}>
           Donate
@@ -87,3 +92,9 @@ export default function donate() {
     </Layout>
   );
 }
+
+donate.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(donate);

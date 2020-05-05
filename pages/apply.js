@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { withUserAgent } from 'next-useragent';
+
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -26,11 +28,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function apply() {
+function apply(props) {
   const classes = useStyles();
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
 
   return (
-    <Layout currentPage="Apply">
+    <Layout currentPage="Apply" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
         <Typography variant="h3" className={classes.title}>
           Apply
@@ -49,3 +54,9 @@ export default function apply() {
     </Layout>
   );
 }
+
+apply.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(apply);

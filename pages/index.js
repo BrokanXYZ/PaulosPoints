@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { withUserAgent } from 'next-useragent';
+
 import Divider from '@material-ui/core/Divider';
 import Link from '@material-ui/core/Link';
 
@@ -74,19 +76,29 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
     ]
   }
 
-export default function Index() {
+function Index(props) {
 
-    return (
-      <Layout currentPage="Home">
-        <OurMission content={ourMissionContent}/>
-        <Divider variant="middle" />
-        <AboutUs content={aboutUsContent}/>
-        <Divider variant="middle" />
-        <TakeAction content={takeActionContent}/>
-        <Divider variant="middle" />
-        <BlogHome />
-        <Divider variant="middle" />
-        <OurTeam content={ourTeamContent}/>
-      </Layout>
-    );
-  }
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
+
+  return (
+    <Layout currentPage="Home" isMobile={isMobile}>
+      <OurMission content={ourMissionContent} isMobile={isMobile}/>
+      <Divider variant="middle" />
+      <AboutUs content={aboutUsContent}/>
+      <Divider variant="middle" />
+      <TakeAction content={takeActionContent}/>
+      <Divider variant="middle" />
+      <BlogHome />
+      <Divider variant="middle" />
+      <OurTeam content={ourTeamContent}/>
+    </Layout>
+  );
+}
+
+Index.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(Index);

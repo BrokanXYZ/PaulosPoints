@@ -97,7 +97,7 @@ export default function ContactForm(props) {
                     <Paper elevation={2}>
                         <Grid container spacing={2} className={classes.contactFormGrid}>
 
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <Typography variant="body1" className={classes.contactText}>
                                     Have a question, comment, or concern? Send us a message by filling out this form! Our team will respond back to you within 24hrs of receiving your message!
                                 </Typography>
