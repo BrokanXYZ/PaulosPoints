@@ -23,7 +23,7 @@ export default function Footer(props) {
           {'.'}
         </Typography>
         <Typography variant="body2" color="textSecondary" align="center">
-          <Link href="/privacyPolicy">
+          <Link href="/privacyPolicy.html" target="_blank">
             Privacy policy
           </Link>
         </Typography>
