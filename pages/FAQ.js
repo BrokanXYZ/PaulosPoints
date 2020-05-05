@@ -1,4 +1,6 @@
 import React from 'react';
+import { withUserAgent } from 'next-useragent';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -160,11 +162,14 @@ const faqSections = [
   },
 ];
 
-export default function FAQ() {
+function FAQ(props) {
   const classes = useStyles();
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
 
   return (
-    <Layout currentPage="FAQ">
+    <Layout currentPage="FAQ" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
           <Typography variant="h3" className={classes.title}>
             FAQ
@@ -181,3 +186,9 @@ export default function FAQ() {
     </Layout>
   );
 }
+
+FAQ.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(FAQ);

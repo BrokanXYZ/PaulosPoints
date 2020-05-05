@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { withUserAgent } from 'next-useragent';
+
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
@@ -37,11 +39,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function LaunchingPaulosPoints() {
+function LaunchingPaulosPoints(props) {
   const classes = useStyles();
 
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
   return (
-    <Layout currentPage="">
+    <Layout currentPage="" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
 
         <Typography variant="h3" className={classes.title}>
@@ -84,3 +89,9 @@ export default function LaunchingPaulosPoints() {
     </Layout>
   );
 }
+
+LaunchingPaulosPoints.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(LaunchingPaulosPoints);

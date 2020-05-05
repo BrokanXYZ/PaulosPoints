@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
 import { makeStyles } from '@material-ui/core/styles';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
-import { Typography } from '@material-ui/core';
-import useMediaQuery from '@material-ui/core/useMediaQuery';  
+import Typography from '@material-ui/core/Typography'; 
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -73,15 +77,64 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { sections, currentPage } = props;
+  const { sections, currentPage, isMobile } = props;
 
-  const isMobile = useMediaQuery('(min-width:600px)');
-  
-  console.log(isMobile);
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setOpen(open)
+  };
 
   if(isMobile){
     return(
-      <></>
+      <AppBar position="sticky" className={classes.appBar}>
+        <Toolbar className={classes.toolbar}>
+          <Grid container spacing={2}>
+
+            <Grid item>
+              <IconButton onClick={() => setOpen(true)}>
+                <MenuIcon/>
+              </IconButton>
+            </Grid>
+
+            <SwipeableDrawer
+              anchor="left"
+              open={open}
+              onClose={toggleDrawer(false)}
+              onOpen={toggleDrawer(true)}
+            >
+              <List>
+                {sections.map((section) => (
+                  <ListItem item key={section.title}>
+                    <Link href={section.url}>
+                      <a className={ section.title === currentPage ? classes.currentPageLink : classes.notCurrentPageLink }>
+                        <Typography
+                          variant="button"
+                          color="inherit"
+                          className={ section.title === currentPage ? classes.headerTextCurrentPage : classes.headerTextNotCurrentPage }
+                        >
+                          {section.title}
+                        </Typography>
+                      </a>
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            </SwipeableDrawer>
+
+            <Grid item>
+              <Link href="/index">
+                <img className={classes.responsiveImage} style={{cursor: 'pointer'}} src="/mainLogo.png" />
+              </Link>
+            </Grid>
+
+          </Grid>
+        </Toolbar>
+      </AppBar>
     );
   }
   else

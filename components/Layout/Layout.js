@@ -20,7 +20,7 @@ const headerSections = [
 ];
 
 export default function Layout(props){
-    const { currentPage } = props;
+    const { currentPage, isMobile } = props;
 
     return(
         <>
@@ -33,7 +33,7 @@ export default function Layout(props){
             <CssBaseline />
 
             <ThemeProvider theme={theme}>
-                <Header sections={headerSections} currentPage={currentPage} />
+                <Header sections={headerSections} currentPage={currentPage} isMobile={isMobile}/>
                 <Container maxWidth="lg">
                     <main>
                         {props.children}

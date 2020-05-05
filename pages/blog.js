@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { withUserAgent } from 'next-useragent';
+
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -45,11 +47,15 @@ const blogSummaries = [
 ]
 
 
-export default function blog() {
+function blog(props) {
   const classes = useStyles();
 
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
+
   return (
-    <Layout currentPage="Blog">
+    <Layout currentPage="Blog" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
         <Typography variant="h3" className={classes.title}>
           Blog
@@ -83,3 +89,9 @@ export default function blog() {
     </Layout>
   );
 }
+
+blog.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(blog);

@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import { withUserAgent } from 'next-useragent';
+
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
@@ -17,11 +19,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function donate() {
+function contact(props) {
   const classes = useStyles();
 
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
+
   return (
-    <Layout currentPage="Contact">
+    <Layout currentPage="Contact" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
         <Typography variant="h3" className={classes.title}>
           Contact
@@ -31,3 +37,9 @@ export default function donate() {
     </Layout>
   );
 }
+
+contact.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(contact);

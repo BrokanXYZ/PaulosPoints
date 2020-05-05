@@ -31,12 +31,12 @@ export default function BlogHome(props) {
     <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="Blog" className={classes.title}>Blog</Typography>
       <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.blogGrid}>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <BlogSummaryCard />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
         </Grid>
       </Grid>
     </Container>
