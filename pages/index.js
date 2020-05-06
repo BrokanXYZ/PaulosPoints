@@ -40,14 +40,14 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
       },
       {
         name: 'Alex Sangster',
-        role: 'Response Team',
+        role: 'Response Team, Cybersecurity, Web Development Support',
         image: '/cardProfileImgs/alexProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/',
         gitHub: '', 
       },
       {
         name: 'Jackson Beard',
-        role: 'Response Team',
+        role: 'Response Team, Cybersecurity, Web Development Support',
         image: '/cardProfileImgs/jacksonProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/jacksonbeard/',
         gitHub: '',
