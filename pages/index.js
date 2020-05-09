@@ -32,6 +32,13 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
     bodyText: 'This website was a collaborative effort between several of Paulo’s close friends. You will find information on contributing to Paulo’s Points, frequently asked questions, an application form, and a contact form. We hope that you are able to find everything you need. If you find problems with the site, or would like to provide us with feedback, please reach out to us using the contact us form. Thank you!',
     profiles: [
       {
+        name: 'Lorna Claudio',
+        role: 'Project Organizer',
+        image: '/cardProfileImgs/mariaProfile.jpg',
+        linkedIn: 'https://www.linkedin.com/in/lorna-claudio-877053aa/',
+        gitHub: ''
+      },
+      {
         name: 'Brok Stafford',
         role: 'Web Developer',
         image: '/cardProfileImgs/brokProfile.jpg',
