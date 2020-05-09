@@ -26,14 +26,15 @@ const useStyles = makeStyles((theme) => ({
 const blogSummaryContent = [
   {
     title: "Launching Paulo's Points",
-    author: "",
+    author: "The Paulo\'s Points Team",
     date: "May 5, 2020",
     summary: "On May 5th 2020, the same day this site and the organization launches, Paulo would have been 24. Through Paulo’s points, Paulo can still achieve his dream of flying people around the world. Happy 24th Birthday Paulo!",
-    link: "/blog/LaunchingPaulosPoints"
+    link: "/blog/LaunchingPaulosPoints",
+    authorInitials: "PPT"
   },
   {
     title: "How Camaraderie Changed my Life and How You Can Change Lives Too",
-    author: "",
+    author: "Jackson Beard",
     date: "May 8, 2020",
     summary: 
       <>
@@ -44,7 +45,8 @@ const blogSummaryContent = [
         I do not normally post on LinkedIn, but this is an exception. Paulo was an exception too. This is a story about Paulo Claudio, a longtime friend who inspired countless people in pursuit of his dreams of flight.
         </p>
       </>,
-    link: "/blog/HowCamaraderieChangedMyLife"
+    link: "/blog/HowCamaraderieChangedMyLife",
+    authorIcon: "/cardProfileImgs/jacksonProfile.jpg",
   },
   {
     title: "",

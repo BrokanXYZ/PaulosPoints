@@ -73,9 +73,7 @@ function HowCamaraderieChangedMyLife(props) {
 
         <Typography variant="body1" className={classes.bodyText}>
 
-            <Link href="https://www.linkedin.com/pulse/how-camaraderie-changed-my-life-you-can-change-lives-too-beard/?trackingId=acCi46VmSnywLJvPmQt9pw%3D%3D" target="_blank">
-              Original post
-            </Link>
+            <img src="/blog/groupPic.png" style={{width: "100%"}}/>
 
             <p>
             Hello There,
@@ -116,6 +114,11 @@ function HowCamaraderieChangedMyLife(props) {
             <p>
             I wrote this story in the hope that it not only appeals to those of you who knew Paulo and I back then, but also to those of you who did not, and if nothing else, I hope it acts as a testament to the power of lifelong friendships. I know times are tough right now, but if you were moved by my story and would like to help us achieve our mission, please consider <Link href="https://paulospoints.org/donate">donating to the foundation</Link>. With a donation, you can help us change lives for cancer patients just as Paulo had done for so many others. I also want to give a special shout out to my longtime friends <Link href="https://www.linkedin.com/in/brokanstafford/" target="_blank">Brok Stafford</Link>, <Link href="https://www.linkedin.com/in/alex-sangster-b49363160/" target="_blank">Alex Sangster</Link>, <Link href="https://www.linkedin.com/in/ian-stone-b285b7105/" target="_blank">Ian Stone</Link>, <Link href="https://www.linkedin.com/in/ashraf-moursi-a68461119/" target="_blank">Ashraf Moursi</Link>, and <Link href="https://www.linkedin.com/in/dev-nair-230465162/" target="_blank">Dev Nair</Link> for their work on this. Without their efforts, none of this would have been possible and I am glad I was able to assist with the development of Paulo’s Points. I am looking forward to what we will achieve!
             </p>
+
+            <Link href="https://www.linkedin.com/pulse/how-camaraderie-changed-my-life-you-can-change-lives-too-beard/?trackingId=acCi46VmSnywLJvPmQt9pw%3D%3D" target="_blank">
+              Original LinkedIn post
+            </Link>
+
         </Typography>
 
     </Container>
