@@ -28,7 +28,14 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   blogTitleText: {
+    fontWeight: '500'
+  },
+  blogTitleTextMobile: {
     fontWeight: '500',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: '145px'
   },
   blogDateText: {
     fontWeight: 'lighter'
@@ -76,7 +83,7 @@ function blog(props) {
                 <ListItem button>
                   <Grid container justify="space-between" alignItems="center">
                     <Grid item>
-                      <Typography variant="body1" className={classes.blogTitleText}>
+                      <Typography variant="body1" className={ isMobile ? classes.blogTitleTextMobile : classes.blogTitleText}>
                         {blogSummary.title}
                       </Typography>
                     </Grid>
