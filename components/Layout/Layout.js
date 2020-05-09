@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import { ThemeProvider } from '@material-ui/core/styles';
 
@@ -15,10 +16,11 @@ const headerSections = [
     { title: 'Donate', url: '/donate' },
     { title: 'Blog', url: '/blog' },
     { title: 'FAQ', url: '/FAQ' },
+    { title: 'Contact', url: '/contact'}
 ];
 
 export default function Layout(props){
-    const { currentPage } = props;
+    const { currentPage, isMobile } = props;
 
     return(
         <>
@@ -31,13 +33,14 @@ export default function Layout(props){
             <CssBaseline />
 
             <ThemeProvider theme={theme}>
-                <Header sections={headerSections} currentPage={currentPage} />
+                <Header sections={headerSections} currentPage={currentPage} isMobile={isMobile}/>
                 <Container maxWidth="lg">
                     <main>
                         {props.children}
                     </main>
+                    <Divider variant="middle" />
+                    <Footer />
                 </Container>
-                <Footer />
             </ThemeProvider>
         </>
     );

@@ -22,15 +22,15 @@ export default function TakeAction(props) {
   const { content } = props;
 
   return (
-    <Container maxWidth="lg" className={classes.container}>
+    <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="TakeAction" className={classes.title}>Take Action</Typography>
       <Container maxWidth="md">
         <Grid container spacing={10} justify="center">
-          <Grid item xs={6}>
-            <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} buttonText={content.callToAction1ButtonText}/>
+          <Grid item xs={12} sm={6}>
+            <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} pageLink="/apply"/>
           </Grid>
-          <Grid item xs={6}>
-            <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} buttonText={content.callToAction2ButtonText}/>
+          <Grid item xs={12} sm={6}>
+            <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} pageLink="/donate"/>
           </Grid>
         </Grid>
       </Container>

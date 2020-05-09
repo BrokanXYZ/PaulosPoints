@@ -5,17 +5,22 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
 
-import TodayIcon from '@material-ui/icons/Today';
-import DoneOutlineOutlinedIcon from '@material-ui/icons/DoneOutlineOutlined';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles({
   root: {
-    height: 245,
+    height: 200,
   },
+  listButton: {
+    width: "100%",
+    justifyContent: "left",
+    textTransform: 'none',
+  },
+  buttonIcon: {
+    marginRight: "25px"
+  }
 });
 
 export default function GiveMoneyCard(props) {
@@ -28,21 +33,16 @@ export default function GiveMoneyCard(props) {
             Give Money
           </Typography>
           <List component="nav">
-
-            <ListItem button>
-              <ListItemIcon>
-                <DoneOutlineOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText primary="One time" />
-            </ListItem>
-
-            <ListItem button>
-              <ListItemIcon>
-                <TodayIcon />
-              </ListItemIcon>
-              <ListItemText primary="Monthly subscription" />
-            </ListItem>
-
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="YK6G79KLWXUU4" />
+              <Button type="submit" className={classes.listButton}>
+                <AttachMoneyIcon className={classes.buttonIcon}/>
+                <Typography variant="body1">
+                  PayPal
+                </Typography>
+              </Button>
+            </form>
           </List>
         </CardContent>
     </Card>

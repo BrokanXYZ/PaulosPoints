@@ -1,10 +1,20 @@
 import React from 'react';
+import { withUserAgent } from 'next-useragent';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Link from '@material-ui/core/Link';
 
-import FaqSection from '../components/FaqSection.js';
+import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
+
+import FaqSection from '../components/FaqSection/FaqSection.js';
 import Layout from '../components/Layout/Layout.js';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(15)
-},
+    marginBottom: theme.spacing(10)
+  },
 }));
 
 const faqSections = [
@@ -25,12 +35,89 @@ const faqSections = [
     entries: [
       {
         question: "Who is qualified for assistance?",
-        answer: "...Cancer patients who is financially challenged and has to travel far for treatments."
+        answer: 
+          <Typography variant="body2">
+            Cancer patients who are financially challenged and have to travel to other cities for the necessary treatments.
+          </Typography>
       },
       {
-        question: "Do you pay for air ambulance?",
-        answer: "***Currently we can only assist you for regular commercial airlines."
+        question: "Does your organization pay for Air Ambulance Services?",
+        answer: 
+          <Typography variant="body2">
+            Currently, our organization can assist you for the following regular commercial airlines:
+            <List>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="United Airlines" />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="Southwest Airlines" />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="American Airlines" />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FiberManualRecordOutlinedIcon fontSize="small"/>
+                </ListItemIcon>
+                <ListItemText primary="Delta Airlines" />
+              </ListItem>
+            </List>
+          </Typography>
       },
+      {
+        question: "What hotels can your organization assist with?",
+        answer: 
+          <Typography variant="body2">
+            We can currently provide support with the following hotels:
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Marriott" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Holiday Inn" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Comfort Inn" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Best Western" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Wyndham" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Hilton" />
+            </ListItem>
+          </List>
+        </Typography>
+      }
     ]
   },
   {
@@ -38,34 +125,51 @@ const faqSections = [
     entries: [
       {
         question: "How can we donate points from airlines and Hotels?",
-        answer: "The foundation has membership accounts set up for most airlines and hotels. The account/membership numbers are listed in our website. You will contact the hotels and airlines yourself to transfer/ donate points to the Foundation accounts. The airlines or hotels might charge you small amount to process the transfers."
+        answer: 
+          <Typography variant="body2">
+            We are currently working on fleshing out this process. At the moment we are collecting information on willing donors. Please fill out the form on our <Link href="/donate" color="secondary">donate page</Link> if you want to donate airline or hotel points.
+          </Typography>
       },
       {
-        question: "Can we give money?",
-        answer: "Yes. We will use the money to buy airline tickets, hotel lodging and ground transportation."
+        question: "Is it possible to just donate money?",
+        answer: 
+          <Typography variant="body2">
+            Yes! We will use the money to buy airline tickets, hotel lodging, as well as ground transportation for patients.
+          </Typography>
       },
       {
-        question: "how can we give money?",
-        answer: "There is (help me on this please) a tab in the. Website where you can ...."
+        question: "How can we donate money?",
+        answer: 
+          <Typography variant="body2">
+            You can find that specific donation method <Link href="/donate" color="secondary">here</Link> on our website.
+          </Typography>
       },
-    ]
-  },
-  {
-    title: "Finance",
-    entries: [
       {
-        question: "???",
-        answer: "So I spoke with some people from the tax department at my firm about the tax treatment of donating airline miles. Basically airline miles donated to a charity are not deductible by the individual person. The IRS only sees it as a gift coming from the organization to the charity. We looked up Red Cross’ website as a source of how they handle this exact thing. The tax manager did mention another charity in Denver that handles contributions of Grants that might have a better tax treatment, so I have some contact info for them if we decide to go that way but as for airline miles the individual can’t deduct that gift"
+        question: "Is it possible for my donation to remain anonymous?",
+        answer: 
+          <Typography variant="body2">
+            Yes! When you choose any form of donation method, you will not be required to enter your First or Last Name unless you choose to.
+          </Typography>
+      },
+      {
+        question: "Instead of just one donation amount, is it possible to donate a portion monthly / recurring?",
+        answer: 
+          <Typography variant="body2">
+            Yes! If you find you do not wish to donate a larger portion at once, there is the option to donate a monthly amount which would pull from your desired payment method.
+          </Typography>
       },
     ]
   },
 ];
 
-export default function FAQ() {
+function FAQ(props) {
   const classes = useStyles();
+  const { ua, useragent } = props;
+
+  const isMobile = ua.isMobile;
 
   return (
-    <Layout currentPage="FAQ">
+    <Layout currentPage="FAQ" isMobile={isMobile}>
       <Container maxWidth="md" className={classes.container}>
           <Typography variant="h3" className={classes.title}>
             FAQ
@@ -82,3 +186,9 @@ export default function FAQ() {
     </Layout>
   );
 }
+
+FAQ.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source }
+}
+
+export default withUserAgent(FAQ);

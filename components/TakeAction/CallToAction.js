@@ -1,27 +1,42 @@
 import React from 'react';
 
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  actionArea: {
+    minHeight: '190px',
+  },
+  linkStyleOverride: {
+    color: "inherit",
+    "&:hover": {
+      textDecoration: "none"
+    }
+  },
+}));
 
 export default function CallToAction(props) {
-  const { title, body, buttonText } = props;
+  const classes = useStyles();
+  const { title, body, pageLink } = props;
 
   return (
     <Card variant="outlined">
-      <CardContent>
-        <Typography variant="h5" gutterBottom>
-          {title}
-        </Typography>
-        <Typography variant="body1">
-          {body}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" href="/donate">{buttonText}</Button>
-      </CardActions>
+      <Link href={pageLink} className={classes.linkStyleOverride}>
+        <CardActionArea className={classes.actionArea}>
+          <CardContent>
+            <Typography variant="h5" gutterBottom>
+              {title}
+            </Typography>
+            <Typography variant="body1">
+              {body}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
     </Card>
   );
 }
