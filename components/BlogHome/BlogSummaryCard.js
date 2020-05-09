@@ -29,23 +29,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BlogSummaryCard(props) {
   const classes = useStyles();
-  const { title, date, author, summary, image } = props;
+  const { content } = props;
 
   return (
     <Card variant="elevation">
           <CardContent className={classes.blogCard}>
             <Typography variant="h6">
-              Launching Paulo's Points
+              {content.title}
             </Typography>
             <Typography variant="subtitle1" color="textSecondary" gutterBottom className={classes.blogDateText}>
-              May 5, 2020
+              {content.date}
             </Typography>
             <Typography variant="body1">
-              On May 5th 2020, the same day this site and the organization launches, Paulo would have been 24. Through Paulo’s points, Paulo can still achieve his dream of flying people around the world. Happy 24th Birthday Paulo!
+              {content.summary}
             </Typography>
             
             <List>
-              <Link href="/blog/LaunchingPaulosPoints" color="secondary" className={classes.LinkStyleOverride}>
+              <Link href={content.link} color="secondary" className={classes.LinkStyleOverride}>
                 <ListItem button className={classes.readMoreListItem}>
                   <Typography variant="button">
                     Read More
