@@ -44,6 +44,13 @@ const blogSummaries = [
     picture: '',
     url: '/blog/LaunchingPaulosPoints',
   },
+  {
+    title: 'How Camaraderie Changed my Life and How You Can Change Lives Too',
+    date: 'May 8, 2020',
+    summary: '',
+    picture: '',
+    url: '/blog/HowCamaraderieChangedMyLife',
+  },
 ]
 
 
