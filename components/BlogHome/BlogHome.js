@@ -49,10 +49,16 @@ const blogSummaryContent = [
     authorIcon: "/cardProfileImgs/jacksonProfile.jpg",
   },
   {
-    title: "",
-    author: "",
-    date: "",
-    summary: ""
+    title: "Paulo Claudio\'s impact and inspiration to myself, and many others",
+    author: "Ian Stone",
+    date: "May 15, 2020",
+    summary: 
+      <p>
+      I wasn’t quite sure how to start my story of Paulo. Considering how many friends and memories he’s made at Pulaski Academy and OSU, it’s hard to limit the number of stories and memories you want to share. I think for now, I’d like to share my personal experiences from when I had first met Paulo and how he’s influenced my life.
+      </p>
+    ,
+    link: "/blog/PauloClaudiosImpactAndInspiration",
+    authorIcon: "/cardProfileImgs/ianProfile.jpg",
   },
 ];
 
@@ -65,12 +71,13 @@ export default function BlogHome(props) {
       <Typography variant="h3" id="Blog" className={classes.title}>Blog</Typography>
       <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.blogGrid}>
         <Grid item xs={12} sm={4}>
+          <BlogSummaryCard content={blogSummaryContent[2]}/>
+        </Grid>
+        <Grid item xs={12} sm={4}>
           <BlogSummaryCard content={blogSummaryContent[1]}/>
         </Grid>
         <Grid item xs={12} sm={4}>
           <BlogSummaryCard content={blogSummaryContent[0]}/>
-        </Grid>
-        <Grid item xs={12} sm={4}>
         </Grid>
       </Grid>
     </Container>

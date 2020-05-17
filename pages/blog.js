@@ -45,11 +45,11 @@ const useStyles = makeStyles((theme) => ({
 
 const blogSummaries = [
   {
-    title: 'Launching Paulo\'s Points',
-    date: 'May 5, 2020',
+    title: 'Paulo Claudio\'s impact and inspiration to myself, and many others',
+    date: 'May 15, 2020',
     summary: '',
     picture: '',
-    url: '/blog/LaunchingPaulosPoints',
+    url: '/blog/PauloClaudiosImpactAndInspiration',
   },
   {
     title: 'How Camaraderie Changed my Life and How You Can Change Lives Too',
@@ -57,6 +57,13 @@ const blogSummaries = [
     summary: '',
     picture: '',
     url: '/blog/HowCamaraderieChangedMyLife',
+  },
+  {
+    title: 'Launching Paulo\'s Points',
+    date: 'May 5, 2020',
+    summary: '',
+    picture: '',
+    url: '/blog/LaunchingPaulosPoints',
   },
 ]
 
