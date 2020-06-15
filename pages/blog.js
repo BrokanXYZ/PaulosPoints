@@ -45,6 +45,13 @@ const useStyles = makeStyles((theme) => ({
 
 const blogSummaries = [
   {
+    title: 'High-Flying Inspiration',
+    date: 'June 13, 2020',
+    summary: '',
+    picture: '',
+    url: '/blog/HighFlyingInspiration',
+  },
+  {
     title: 'Paulo Claudio\'s impact and inspiration to myself, and many others',
     date: 'May 15, 2020',
     summary: '',

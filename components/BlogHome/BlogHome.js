@@ -25,14 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 const blogSummaryContent = [
   {
-    title: "Launching Paulo's Points",
-    author: "The Paulo\'s Points Team",
-    date: "May 5, 2020",
-    summary: "On May 5th 2020, the same day this site and the organization launches, Paulo would have been 24. Through Paulo’s points, Paulo can still achieve his dream of flying people around the world. Happy 24th Birthday Paulo!",
-    link: "/blog/LaunchingPaulosPoints",
-    authorInitials: "PPT"
-  },
-  {
     title: "How Camaraderie Changed my Life and How You Can Change Lives Too",
     author: "Jackson Beard",
     date: "May 8, 2020",
@@ -59,6 +51,16 @@ const blogSummaryContent = [
     ,
     link: "/blog/PauloClaudiosImpactAndInspiration",
     authorIcon: "/cardProfileImgs/ianProfile.jpg",
+  },
+  {
+    title: "High-Flying Inspiration",
+    author: "Ashraf Moursi",
+    date: "June 13, 2020",
+    summary: 
+      <p>It really is such a strange feeling, even a year to this day after saying goodbye to such a close friend, to be writing something like this. However, in a way, I am finding that it is not difficult for me to put on paper the great memories I have of Paulo. This is because of how strong they are and how important they are personally to me and my life.</p>
+    ,
+    link: "/blog/HighFlyingInspiration",
+    authorIcon: "/cardProfileImgs/ashrafProfile.jpg",
   },
 ];
 
