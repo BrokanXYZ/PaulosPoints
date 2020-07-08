@@ -41,9 +41,9 @@ function apply(props) {
           Apply
         </Typography>
         <Typography variant="body1">
-          We are currently working on our application process. If you are interested in receiving support, then please send us a message via our <Link href="/contact" color="secondary">contact page</Link>. We will notify you when we are ready.
+          Please download, print and complete the application. Once completed, please reach out to us using the <Link href="/contact" color="secondary">contact us</Link> form and we will coordinate transfer of the document with you.
         </Typography>
-        <Button disabled variant="contained" color="secondary" className={classes.downloadButton}>
+        <Button href="https://drive.google.com/u/0/uc?id=1KgFYPj0MFhm18WnQeGh4ML_EbbbjUC_f&export=download" target="_blank" variant="contained" color="secondary" className={classes.downloadButton}>
           <GetAppIcon className={classes.getAppIcon}/>
           <Typography variant="button">
             Download Application
