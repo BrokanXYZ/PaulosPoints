@@ -45,52 +45,40 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BlogSummaryCard(props) {
   const classes = useStyles();
-  const { content } = props;
+  const { title, author, authorPicture, authorInitials, contentSummary, date, link } = props;
 
   return (
     <Card variant="elevation">
           <CardContent className={classes.blogCard}>
 
+          <Link href={link}  >
             <Typography variant="h6" gutterBottom>
-              {content.title}
+              {title}
             </Typography>
+          </Link>
 
             <Grid container alignItems="center" className={classes.subtitleContainer}>
               <Grid item>
                 {
-                  content.authorInitials ?
-                    <Avatar alt="Author Icon" className={classes.authorAvatar}>{content.authorInitials}</Avatar>
+                  authorPicture == null ?
+                    <Avatar alt="Author Icon" className={classes.authorAvatar}>{authorInitials}</Avatar>
                   :
-                    <Avatar alt="Author Icon" className={classes.authorAvatar} src={content.authorIcon}/>
+                    <Avatar alt="Author Icon" className={classes.authorAvatar} src={authorPicture}/>
                 }
               </Grid>
               <Grid item direction="column">
                 <Grid item>
                   <Typography className={classes.authorText}>
-                    {content.author}
+                    {author}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography color="textSecondary" className={classes.dateText}>
-                    {content.date}
+                    {date}
                   </Typography>
                 </Grid>
               </Grid>
             </Grid>
-            
-            <Typography variant="body1">
-              {content.summary}
-            </Typography>
-
-            <List>
-              <Link href={content.link} color="secondary" className={classes.LinkStyleOverride}>
-                <ListItem button className={classes.readMoreListItem}>
-                  <Typography variant="button">
-                    Read More
-                  </Typography>
-                </ListItem>
-              </Link>
-            </List>
 
           </CardContent>
     </Card>
