@@ -1,5 +1,7 @@
 import React from 'react';
 
+import axios from 'axios';
+
 import { withUserAgent } from 'next-useragent';
 
 import Divider from '@material-ui/core/Divider';
@@ -95,9 +97,9 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
 
 function Index(props) {
 
-  const { ua, useragent } = props;
+  const { useragent, blogPosts } = props;
 
-  const isMobile = ua.isMobile;
+  const isMobile = useragent.isMobile;
 
   return (
     <Layout currentPage="Home" isMobile={isMobile}>
@@ -107,7 +109,7 @@ function Index(props) {
       <Divider variant="middle" />
       <TakeAction content={takeActionContent}/>
       <Divider variant="middle" />
-      <BlogHome />
+      <BlogHome blogPosts={blogPosts} />
       <Divider variant="middle" />
       <OurTeam content={ourTeamContent}/>
     </Layout>
@@ -115,7 +117,10 @@ function Index(props) {
 }
 
 Index.getInitialProps = async ctx => {
-  return { useragent: ctx.ua.source }
+  const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
+  const blogPosts = await res.data.items;
+
+  return { useragent: ctx.ua.source, blogPosts: blogPosts}
 }
 
 export default withUserAgent(Index);

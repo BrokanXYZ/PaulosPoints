@@ -23,63 +23,121 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const blogSummaryContent = [
-  {
-    title: "How Camaraderie Changed my Life and How You Can Change Lives Too",
-    author: "Jackson Beard",
-    date: "May 8, 2020",
-    summary: 
-      <>
-        <p>
-        Hello There,
-        </p>
-        <p>
-        I do not normally post on LinkedIn, but this is an exception. Paulo was an exception too. This is a story about Paulo Claudio, a longtime friend who inspired countless people in pursuit of his dreams of flight.
-        </p>
-      </>,
-    link: "/blog/HowCamaraderieChangedMyLife",
-    authorIcon: "/cardProfileImgs/jacksonProfile.jpg",
-  },
-  {
-    title: "Paulo Claudio\'s impact and inspiration to myself, and many others",
-    author: "Ian Stone",
-    date: "May 15, 2020",
-    summary: 
-      <p>
-      I wasn’t quite sure how to start my story of Paulo. Considering how many friends and memories he’s made at Pulaski Academy and OSU, it’s hard to limit the number of stories and memories you want to share. I think for now, I’d like to share my personal experiences from when I had first met Paulo and how he’s influenced my life.
-      </p>
-    ,
-    link: "/blog/PauloClaudiosImpactAndInspiration",
-    authorIcon: "/cardProfileImgs/ianProfile.jpg",
-  },
-  {
-    title: "High-Flying Inspiration",
-    author: "Ashraf Moursi",
-    date: "June 13, 2020",
-    summary: 
-      <p>It really is such a strange feeling, even a year to this day after saying goodbye to such a close friend, to be writing something like this. However, in a way, I am finding that it is not difficult for me to put on paper the great memories I have of Paulo. This is because of how strong they are and how important they are personally to me and my life.</p>
-    ,
-    link: "/blog/HighFlyingInspiration",
-    authorIcon: "/cardProfileImgs/ashrafProfile.jpg",
-  },
-];
 
 export default function BlogHome(props) {
   const classes = useStyles();
-  const { content } = props;
+  const { blogPosts } = props;
+
+
+  const extractAuthor = (blogContent) => {
+
+    let extractedAuthor = "Not Available";
+    let start = 0;
+    let end = 0;
+    let tempCount = 0;
+    let index = 0;
+
+    while(index < blogContent.length && tempCount !==2){
+      if(blogContent[index]==='>'){
+        tempCount++
+      }
+
+      index++;
+    }
+
+    start = index;
+    tempCount = 0;
+
+    while(index < blogContent.length && tempCount !==1){
+      if(blogContent[index]==='<'){
+        tempCount++
+      }
+
+      index++;
+    }
+
+    end = index;
+    extractedAuthor = blogContent.substr(start, end-start-1);
+
+    return extractedAuthor;
+  };
+
+  const getAuthorPicture = (author) => {
+
+    let authorPicture = null;
+    const authorWithoutSpecialSpaces = author.replace(/\s+/g, " ");
+
+    switch(authorWithoutSpecialSpaces){
+      case "Ashraf Moursi":
+        authorPicture = "/cardProfileImgs/ashrafProfile.jpg";
+        break;
+      case "Alex Sangster":
+        authorPicture = "/cardProfileImgs/alexProfile.jpg";
+        break;
+      case "Brok Stafford":
+        authorPicture = "/cardProfileImgs/brokProfile.jpg";
+        break;
+      case "Dev Nair":
+        authorPicture = "/cardProfileImgs/devProfile.jpg";
+        break;
+      case "Jackson Beard":
+        authorPicture = "/cardProfileImgs/jacksonProfile.jpg";
+        break;
+      case "Ian Stone":
+        authorPicture = "/cardProfileImgs/ianProfile.jpg";
+        break;
+      
+    }
+
+    return authorPicture;
+  };
+
+  const getAuthorInitials = (author) => {
+    let initials = "";
+
+    for(let x=0; x<author.length; x++){
+      if(author[x] == author[x].toUpperCase()){
+        initials += author[x];
+      }
+    }
+
+    return initials;
+  };
 
   return (
     <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="Blog" className={classes.title}>Blog</Typography>
       <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.blogGrid}>
+        {blogPosts.slice(0,3).map(blogPost => 
+          {
+
+            const extractedAuthor = extractAuthor(blogPost.content);
+            const authorPicture = getAuthorPicture(extractedAuthor);
+            const authorInitials = getAuthorInitials(extractedAuthor);
+
+            const blogPostDateString = new Date(blogPost.pubDate).toDateString();
+            const dateStringWithoutDay = blogPostDateString.substr(4,blogPostDateString.length-4);
+            const dateStringWithComma = dateStringWithoutDay.slice(0, 6) + ", " + dateStringWithoutDay.slice(6);
+
+            return(
+              <Grid item xs={12} sm={4} key={blogPost.title}>
+                <BlogSummaryCard
+                  title={blogPost.title}
+                  author={extractedAuthor}
+                  authorPicture={authorPicture}
+                  authorInitials={authorInitials}
+                  date={dateStringWithComma}
+                  link={blogPost.link}
+                />
+              </Grid>
+            );
+          }
+        )}
         <Grid item xs={12} sm={4}>
-          <BlogSummaryCard content={blogSummaryContent[2]}/>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <BlogSummaryCard content={blogSummaryContent[1]}/>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <BlogSummaryCard content={blogSummaryContent[0]}/>
         </Grid>
       </Grid>
     </Container>

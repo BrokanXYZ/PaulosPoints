@@ -1,6 +1,6 @@
 import React from 'react';
+import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
-
 import { withUserAgent } from 'next-useragent';
 
 import Container from '@material-ui/core/Container';
@@ -43,42 +43,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const blogSummaries = [
-  {
-    title: 'High-Flying Inspiration',
-    date: 'June 13, 2020',
-    summary: '',
-    picture: '',
-    url: '/blog/HighFlyingInspiration',
-  },
-  {
-    title: 'Paulo Claudio\'s impact and inspiration to myself, and many others',
-    date: 'May 15, 2020',
-    summary: '',
-    picture: '',
-    url: '/blog/PauloClaudiosImpactAndInspiration',
-  },
-  {
-    title: 'How Camaraderie Changed my Life and How You Can Change Lives Too',
-    date: 'May 8, 2020',
-    summary: '',
-    picture: '',
-    url: '/blog/HowCamaraderieChangedMyLife',
-  },
-  {
-    title: 'Launching Paulo\'s Points',
-    date: 'May 5, 2020',
-    summary: '',
-    picture: '',
-    url: '/blog/LaunchingPaulosPoints',
-  },
-]
-
-
 function blog(props) {
   const classes = useStyles();
 
-  const { ua, useragent } = props;
+  const { ua, blogPosts } = props;
 
   const isMobile = ua.isMobile;
 
@@ -90,27 +58,36 @@ function blog(props) {
         </Typography>
         <List component="nav">
         {
-          blogSummaries.map( blogSummary => (
-            <>
-              <Divider />
-              <Link href={blogSummary.url} className={classes.linkStyleOverride}>
-                <ListItem button>
-                  <Grid container justify="space-between" alignItems="center">
-                    <Grid item>
-                      <Typography variant="body1" className={ isMobile ? classes.blogTitleTextMobile : classes.blogTitleText}>
-                        {blogSummary.title}
-                      </Typography>
+          blogPosts.map( blogPost => {
+
+            const blogPostDateString = new Date(blogPost.pubDate).toDateString();
+            const dateStringWithoutDay = blogPostDateString.substr(4,blogPostDateString.length-4);
+            const dateStringWithComma = dateStringWithoutDay.slice(0, 6) + ", " + dateStringWithoutDay.slice(6);
+
+            return(
+              <span
+                key={blogPost.title}
+              >
+                <Divider />
+                <Link href={blogPost.link} className={classes.linkStyleOverride}>
+                  <ListItem button>
+                    <Grid container justify="space-between" alignItems="center">
+                      <Grid item>
+                        <Typography variant="body1" className={ isMobile ? classes.blogTitleTextMobile : classes.blogTitleText}>
+                          {blogPost.title}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography variant="subtitle1" color="textSecondary" className={classes.blogDateText}>
+                          {dateStringWithComma}
+                        </Typography>
+                      </Grid>
                     </Grid>
-                    <Grid item>
-                      <Typography variant="subtitle1" color="textSecondary" className={classes.blogDateText}>
-                        {blogSummary.date}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </ListItem>
-              </Link>
-            </>
-          ))
+                  </ListItem>
+                </Link>
+              </span>
+            );
+          })
         }
         </List>
     </Container>
@@ -119,7 +96,10 @@ function blog(props) {
 }
 
 blog.getInitialProps = async ctx => {
-  return { useragent: ctx.ua.source }
+  const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
+  const blogPosts = await res.data.items;
+
+  return { useragent: ctx.ua.source, blogPosts: blogPosts}
 }
 
 export default withUserAgent(blog);
