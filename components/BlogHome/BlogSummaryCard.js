@@ -51,7 +51,7 @@ export default function BlogSummaryCard(props) {
     <Card variant="elevation">
           <CardContent className={classes.blogCard}>
 
-          <Link href={link}  >
+          <Link href={link} color="secondary" >
             <Typography variant="h6" gutterBottom>
               {title}
             </Typography>
