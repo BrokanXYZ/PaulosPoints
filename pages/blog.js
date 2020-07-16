@@ -69,7 +69,7 @@ function blog(props) {
                 key={blogPost.title}
               >
                 <Divider />
-                <Link href={blogPost.link} className={classes.linkStyleOverride}>
+                <Link href={blogPost.link} className={classes.linkStyleOverride} target="_blank">
                   <ListItem button>
                     <Grid container justify="space-between" alignItems="center">
                       <Grid item>
