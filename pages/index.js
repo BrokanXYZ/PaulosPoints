@@ -16,7 +16,7 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
 
 
   const ourMissionContent = {
-    missionStatement: 'Paulo’s Points is a non-profit organization whose mission is to use generous donations of frequent flier miles, loyalty points, and money for the transportation and housing needs of cancer patients.',
+    missionStatement: 'Paulo’s Points is a non-profit organization whose mission is to use generous donations of frequent flier miles, loyalty points, and money for the transportation and housing needs of cancer patients during treatment.',
   }
 
   const aboutUsContent = {
