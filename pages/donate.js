@@ -36,13 +36,15 @@ function getContent(donationType, setDonationType){
       <Grid container>
         <Grid item xs={12} style={{textAlign: 'center', marginBottom: '25px'}}>
           <Typography variant="body1">
-            What do you want to donate?
+            Take action!
           </Typography>
         </Grid>
         <Grid item xs={6} style={{textAlign: 'center'}}>
           <Button size="large" onClick={() => setDonationType("points")}>
             <AirplanemodeActiveOutlinedIcon style={{marginRight: '5px'}}/>
-            Points
+            <Typography variant="button">
+              Pledge Points
+            </Typography>
           </Button>
         </Grid>
         <Grid item xs={6} style={{textAlign: 'center'}}>
@@ -51,8 +53,8 @@ function getContent(donationType, setDonationType){
               <input type="hidden" name="hosted_button_id" value="YK6G79KLWXUU4" />
               <Button type="submit">
                 <AttachMoneyIcon />
-                <Typography variant="body1">
-                  Money
+                <Typography variant="button">
+                  Donate Money
                 </Typography>
               </Button>
             </form>
