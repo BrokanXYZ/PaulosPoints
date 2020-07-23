@@ -105,9 +105,9 @@ function Index(props) {
     <Layout currentPage="Home" isMobile={isMobile}>
       <OurMission content={ourMissionContent} isMobile={isMobile}/>
       <Divider variant="middle" />
-      <AboutUs content={aboutUsContent}/>
-      <Divider variant="middle" />
       <TakeAction content={takeActionContent}/>
+      <Divider variant="middle" />
+      <AboutUs content={aboutUsContent}/>
       <Divider variant="middle" />
       <BlogHome blogPosts={blogPosts} />
       <Divider variant="middle" />
