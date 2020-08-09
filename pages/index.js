@@ -5,7 +5,6 @@ import axios from 'axios';
 import { withUserAgent } from 'next-useragent';
 
 import Divider from '@material-ui/core/Divider';
-import Link from '@material-ui/core/Link';
 
 import OurMission from '../components/OurMission.js';
 import AboutUs from '../components/AboutUs.js';
@@ -120,7 +119,7 @@ Index.getInitialProps = async ctx => {
   const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
   const blogPosts = await res.data.items;
 
-  return { useragent: ctx.ua.source, blogPosts: blogPosts}
+  return { useragent: ctx.ua, blogPosts: blogPosts}
 }
 
 export default withUserAgent(Index);
