@@ -1,8 +1,10 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
+
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+
 import Grid from '@material-ui/core/Grid';
 
 import CallToAction from './CallToAction.js';
@@ -25,12 +27,12 @@ export default function TakeAction(props) {
     <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="TakeAction" className={classes.title}>Take Action</Typography>
       <Container maxWidth="md">
-        <Grid container spacing={10} justify="center">
+        <Grid container spacing={10} justify="center" alignItems="center">
           <Grid item xs={12} sm={6}>
-            <CallToAction title={content.callToAction1Title} body={content.callToAction1Body} pageLink="/apply"/>
+            <CallToAction buttonText="Donate" body={content.callToAction2Body} pageLink="/donate"/>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <CallToAction title={content.callToAction2Title} body={content.callToAction2Body} pageLink="/donate"/>
+            <CallToAction buttonText="Apply for Assistance" body={content.callToAction1Body} pageLink="/apply"/>
           </Grid>
         </Grid>
       </Container>

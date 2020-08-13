@@ -5,7 +5,6 @@ import axios from 'axios';
 import { withUserAgent } from 'next-useragent';
 
 import Divider from '@material-ui/core/Divider';
-import Link from '@material-ui/core/Link';
 
 import OurMission from '../components/OurMission.js';
 import AboutUs from '../components/AboutUs.js';
@@ -25,9 +24,9 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
   
   const takeActionContent = {
     callToAction1Title: 'Apply',
-    callToAction1Body: <>In need of housing or transportation for treatment of a life threatening medical condition? We are currently working on our application process, but feel free to <Link href="/contact" color="secondary">contact us</Link> in the meantime! We will immediately notify you when we are ready.</>,
+    callToAction1Body: 'In need of housing or transportation for treatment of a life threatening medical condition? Click the button below to follow our application process!',
     callToAction2Title: 'Donate',
-    callToAction2Body: 'Want to donate airline miles, hotel points, or money to our cause? Click here to make a one time or recurring donation to the Paulo’s Points foundation.',
+    callToAction2Body: 'Want to donate airline miles, hotel points, or money to our cause? Click below to make a one time or recurring donation to the Paulo’s Points foundation.',
   }
 
   const ourTeamContent = {
@@ -105,9 +104,9 @@ function Index(props) {
     <Layout currentPage="Home" isMobile={isMobile}>
       <OurMission content={ourMissionContent} isMobile={isMobile}/>
       <Divider variant="middle" />
-      <AboutUs content={aboutUsContent}/>
-      <Divider variant="middle" />
       <TakeAction content={takeActionContent}/>
+      <Divider variant="middle" />
+      <AboutUs content={aboutUsContent}/>
       <Divider variant="middle" />
       <BlogHome blogPosts={blogPosts} />
       <Divider variant="middle" />
@@ -120,7 +119,7 @@ Index.getInitialProps = async ctx => {
   const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
   const blogPosts = await res.data.items;
 
-  return { useragent: ctx.ua.source, blogPosts: blogPosts}
+  return { useragent: ctx.ua, blogPosts: blogPosts}
 }
 
 export default withUserAgent(Index);

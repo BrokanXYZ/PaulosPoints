@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -73,6 +73,30 @@ const useStyles = makeStyles((theme) => ({
   sectionHeaderContainer: {
     marginTop: '21px'
   },
+  buttonRoot: {
+    minWidth: 100,
+    transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+    backgroundColor: theme.palette.secondary.main,
+    borderRadius: 50,
+    marginBottom: '12px',
+    '&:hover': {
+      transform: 'scale(1.1)',
+      backgroundColor: theme.palette.secondary.lessDark,
+    }
+  },
+  buttonLabel: {
+    color: "white",
+    textTransform: 'none',
+    fontSize: 15,
+    fontWeight: 700,
+  },
+  buttonContained: {
+    minHeight: 30,
+    boxShadow: 'none',
+    '&:active': {
+      boxShadow: 'none',
+    },
+  },
 }));
 
 export default function Header(props) {
@@ -108,6 +132,15 @@ export default function Header(props) {
               onOpen={toggleDrawer(true)}
             >
               <List>
+                <ListItem>
+                  <Button 
+                    href="/donate"
+                    variant="contained"
+                    classes={{root: classes.buttonRoot, label: classes.buttonLabel, contained: classes.buttonContained}}
+                  >
+                    Donate
+                  </Button>
+                </ListItem>
                 {sections.map((section) => (
                   <ListItem item key={section.title}>
                     <Link href={section.url}>
@@ -169,6 +202,17 @@ export default function Header(props) {
             </Grid>
 
             <Grid item container xs={3} spacing={0} justify="flex-end" alignItems="flex-end">
+              
+              <Grid item>
+                <Button 
+                  href="/donate"
+                  variant="contained"
+                  classes={{root: classes.buttonRoot, label: classes.buttonLabel, contained: classes.buttonContained}}
+                >
+                  Donate
+                </Button>
+              </Grid>
+
               <Grid item>
                 <IconButton href="https://www.facebook.com/Paulos-Points-113325360329282" target="_blank">
                   <FacebookIcon fontSize="large" className={classes.facebookIcon}/>
