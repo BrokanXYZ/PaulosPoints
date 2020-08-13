@@ -132,6 +132,15 @@ export default function Header(props) {
               onOpen={toggleDrawer(true)}
             >
               <List>
+                <ListItem>
+                  <Button 
+                    href="/donate"
+                    variant="contained"
+                    classes={{root: classes.buttonRoot, label: classes.buttonLabel, contained: classes.buttonContained}}
+                  >
+                    Donate
+                  </Button>
+                </ListItem>
                 {sections.map((section) => (
                   <ListItem item key={section.title}>
                     <Link href={section.url}>
