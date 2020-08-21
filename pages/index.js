@@ -24,7 +24,7 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
   
   const takeActionContent = {
     callToAction1Title: 'Apply',
-    callToAction1Body: 'In need of housing or transportation for treatment of a life threatening medical condition? Click the button below to follow our application process!',
+    callToAction1Body: 'Are you a cancer patient in need of housing or transportation support? Click the button below to follow our application process!',
     callToAction2Title: 'Donate',
     callToAction2Body: 'Want to donate airline miles, hotel points, or money to our cause? Click below to make a one time or recurring donation to the Paulo’s Points foundation.',
   }
