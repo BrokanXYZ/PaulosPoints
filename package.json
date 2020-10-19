@@ -23,6 +23,7 @@
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "emailjs-com": "^2.4.1",
+    "moment": "^2.29.1",
     "next": "^9.3.4",
     "next-useragent": "^2.1.1",
     "react": "^16.13.1",
