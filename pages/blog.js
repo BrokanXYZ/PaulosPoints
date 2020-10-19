@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
 import { withUserAgent } from 'next-useragent';
 
@@ -60,9 +61,9 @@ function blog(props) {
         {
           blogPosts.map( blogPost => {
 
-            const blogPostDateString = new Date(blogPost.pubDate).toDateString();
-            const dateStringWithoutDay = blogPostDateString.substr(4,blogPostDateString.length-4);
-            const dateStringWithComma = dateStringWithoutDay.slice(0, 6) + ", " + dateStringWithoutDay.slice(6);
+            const blogPostDateWithoutTime = blogPost.pubDate.substr(0,10); "2020-01-15 3:00:23 AM"
+            const blogPostMomentDate = moment(blogPostDateWithoutTime, "YYYY-MM-DD");
+            const blogPostMomentDateString = blogPostMomentDate.format("MMM D, YYYY");
 
             return(
               <span
@@ -79,7 +80,7 @@ function blog(props) {
                       </Grid>
                       <Grid item>
                         <Typography variant="subtitle1" color="textSecondary" className={classes.blogDateText}>
-                          {dateStringWithComma}
+                          {blogPostMomentDateString}
                         </Typography>
                       </Grid>
                     </Grid>
