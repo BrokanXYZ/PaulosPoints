@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -113,11 +114,11 @@ export default function BlogHome(props) {
 
             const extractedAuthor = extractAuthor(blogPost.content);
             const authorPicture = getAuthorPicture(extractedAuthor);
-            const authorInitials = getAuthorInitials(extractedAuthor);
+            const authorInitials = getAuthorInitials(extractedAuthor);            
 
-            const blogPostDateString = new Date(blogPost.pubDate).toDateString();
-            const dateStringWithoutDay = blogPostDateString.substr(4,blogPostDateString.length-4);
-            const dateStringWithComma = dateStringWithoutDay.slice(0, 6) + ", " + dateStringWithoutDay.slice(6);
+            const blogPostDateWithoutTime = blogPost.pubDate.substr(0,10);
+            const blogPostMomentDate = moment(blogPostDateWithoutTime, "YYYY-MM-DD");
+            const blogPostMomentDateString = blogPostMomentDate.format("MMM D, YYYY");
 
             return(
               <Grid item xs={12} sm={4} key={blogPost.title}>
@@ -126,7 +127,7 @@ export default function BlogHome(props) {
                   author={extractedAuthor}
                   authorPicture={authorPicture}
                   authorInitials={authorInitials}
-                  date={dateStringWithComma}
+                  date={blogPostMomentDateString}
                   link={blogPost.link}
                 />
               </Grid>
