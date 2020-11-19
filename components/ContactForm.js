@@ -103,7 +103,6 @@ export default function ContactForm(props) {
                                 </Typography>
                             </Grid>
 
-                            
                                 <Grid item xs={6} direction="column">
                                     <TextField
                                         required
