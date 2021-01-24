@@ -72,7 +72,11 @@ export default function ContactForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
     
+<<<<<<< HEAD
         emailjs.sendForm('default_service', 'contact_form', e.target, 'user_4y8j5elKzW0qAM8pw6baL')
+=======
+        emailjs.sendForm('default_service', 'contact_form', e.target, process.env.EMAILJS_USER_ID)
+>>>>>>> b04808d08acade0145fb2cd715686d27277d8750
         .then((result) => {
             setIsSuccess(true);
             setOpen(true);
@@ -103,7 +107,10 @@ export default function ContactForm(props) {
                                 </Typography>
                             </Grid>
 
+<<<<<<< HEAD
                             
+=======
+>>>>>>> b04808d08acade0145fb2cd715686d27277d8750
                                 <Grid item xs={6} direction="column">
                                     <TextField
                                         required
