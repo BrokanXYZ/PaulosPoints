@@ -24,12 +24,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4)
   },
   paper: {
-    //minHeight: '250px',
     padding: theme.spacing(3)
   }
 }));
 
-function getContent(donationType, setDonationType){
+function getContent(donationType, setDonationType, isMobile){
   switch(donationType){
     case "none":
       return(
@@ -39,25 +38,33 @@ function getContent(donationType, setDonationType){
             Take action!
           </Typography>
         </Grid>
-        <Grid item xs={6} style={{textAlign: 'center'}}>
-          <Button size="large" onClick={() => setDonationType("points")}>
-            <AirplanemodeActiveOutlinedIcon style={{marginRight: '5px'}}/>
-            <Typography variant="button">
-              Pledge Points
-            </Typography>
-          </Button>
+        <Grid item xs={12} sm={4} style={{textAlign: 'center', paddingBottom: "20px"}}>
+              <Button href="https://www.paypal.com/us/fundraiser/charity/4117896" target="_blank">
+                <AttachMoneyIcon />
+                <Typography variant="button">
+                  Make a one time donation
+                </Typography>
+              </Button>
         </Grid>
-        <Grid item xs={6} style={{textAlign: 'center'}}>
+        <Grid item xs={12} sm={4} style={{textAlign: 'center', paddingBottom: "20px"}}>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick" />
               <input type="hidden" name="hosted_button_id" value="YK6G79KLWXUU4" />
               <Button type="submit">
                 <AttachMoneyIcon />
                 <Typography variant="button">
-                  Donate Money
+                  Make a recurring donation
                 </Typography>
               </Button>
             </form>
+        </Grid>
+        <Grid item xs={12} sm={4} style={{textAlign: 'center'}}>
+          <Button size="large" onClick={() => setDonationType("points")}>
+            <AirplanemodeActiveOutlinedIcon style={{marginRight: '5px'}}/>
+            <Typography variant="button">
+              Pledge Points
+            </Typography>
+          </Button>
         </Grid>
       </Grid>);
     case "points":
@@ -86,7 +93,7 @@ function donate(props) {
         
           <Container maxWidth="lg" className={classes.container}>
             <Paper elevation={2} className={classes.paper}>
-              {getContent(donationType, setDonationType)}
+              {getContent(donationType, setDonationType, isMobile)}
             </Paper>
           </Container>
 
