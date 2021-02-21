@@ -33,33 +33,25 @@ export default function BlogHome(props) {
   const extractAuthor = (blogContent) => {
 
     let extractedAuthor = "Not Available";
-    let start = 0;
-    let end = 0;
-    let tempCount = 0;
+    let start = -1;
+    let end = -1;
     let index = 0;
 
-    while(index < blogContent.length && tempCount !==2){
-      if(blogContent[index]==='>'){
-        tempCount++
+    while(index < blogContent.length && start == -1){
+      if(blogContent[index]==='y'){
+        start = index+2;
       }
-
       index++;
     }
 
-    start = index;
-    tempCount = 0;
-
-    while(index < blogContent.length && tempCount !==1){
+    while(index < blogContent.length && end == -1){
       if(blogContent[index]==='<'){
-        tempCount++
+        end = index
       }
-
       index++;
     }
 
-    end = index;
-    extractedAuthor = blogContent.substr(start, end-start-1);
-
+    extractedAuthor = blogContent.substr(start, end-start);
     return extractedAuthor;
   };
 
@@ -111,7 +103,6 @@ export default function BlogHome(props) {
       <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.blogGrid}>
         {blogPosts.slice(0,3).map(blogPost => 
           {
-
             const extractedAuthor = extractAuthor(blogPost.content);
             const authorPicture = getAuthorPicture(extractedAuthor);
             const authorInitials = getAuthorInitials(extractedAuthor);            
