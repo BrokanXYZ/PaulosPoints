@@ -12,6 +12,7 @@ import TakeAction from '../components/TakeAction/TakeAction.js';
 import OurTeam from '../components/OurTeam.js';
 import Layout from '../components/Layout/Layout.js'
 import BlogHome from '../components/BlogHome/BlogHome.js';
+import Partners from '../components/Partners/Partners.js';
 
 
   const ourMissionContent = {
@@ -107,6 +108,8 @@ function Index(props) {
       <BlogHome blogPosts={blogPosts} />
       <Divider variant="middle" />
       <OurTeam content={ourTeamContent}/>
+      <Divider variant="middle" />
+      <Partners />
     </Layout>
   );
 }
