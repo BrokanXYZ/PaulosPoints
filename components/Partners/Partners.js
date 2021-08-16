@@ -28,7 +28,7 @@ export default function Partners(props) {
 
   return (
     <Container maxWidth="md" className={classes.container}>
-      <Typography variant="h3" id="TakeAction" className={classes.title}>Partners</Typography>
+      <Typography variant="h3" className={classes.title}>Partners</Typography>
       <Container maxWidth="md">
         <Grid container spacing={10} justify="center" alignItems="center">
           <Grid item sm={6} md={4} className={classes.logoItem}>

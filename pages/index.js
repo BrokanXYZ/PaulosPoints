@@ -13,6 +13,7 @@ import OurTeam from '../components/OurTeam.js';
 import Layout from '../components/Layout/Layout.js'
 import BlogHome from '../components/BlogHome/BlogHome.js';
 import Partners from '../components/Partners/Partners.js';
+import Impact from '../components/Impact/Impact.js';
 
 
   const ourMissionContent = {
@@ -91,6 +92,10 @@ import Partners from '../components/Partners/Partners.js';
     ]
   }
 
+  const ourImpactContent = {
+    bodyText: "description goes here. Something about highlighted states being ones that we've helped residents of. Maybe something also about the scope of our support (US only? future plans?)",
+  }
+
 function Index(props) {
 
   const { useragent, blogPosts } = props;
@@ -106,6 +111,8 @@ function Index(props) {
       <AboutUs />
       <Divider variant="middle" />
       <BlogHome blogPosts={blogPosts} />
+      <Divider variant="middle" />
+      <Impact content={ourImpactContent} />
       <Divider variant="middle" />
       <OurTeam content={ourTeamContent}/>
       <Divider variant="middle" />
