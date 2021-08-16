@@ -13,6 +13,7 @@ import OurTeam from '../components/OurTeam.js';
 import Layout from '../components/Layout/Layout.js'
 import BlogHome from '../components/BlogHome/BlogHome.js';
 import Partners from '../components/Partners/Partners.js';
+import Impact from '../components/Impact/Impact.js';
 
 
   const ourMissionContent = {
@@ -106,6 +107,8 @@ function Index(props) {
       <AboutUs />
       <Divider variant="middle" />
       <BlogHome blogPosts={blogPosts} />
+      <Divider variant="middle" />
+      <Impact />
       <Divider variant="middle" />
       <OurTeam content={ourTeamContent}/>
       <Divider variant="middle" />
