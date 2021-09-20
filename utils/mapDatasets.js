@@ -41,7 +41,11 @@ export const stateData = [
     { "state": "MP", "id": "69", "filled": false },
     { "state": "OH", "id": "39", "filled": false },
     { "state": "OK", "id": "40", "filled": false },
+<<<<<<< HEAD
     { "state": "OR", "id": "41", "filled": true },
+=======
+    { "state": "OR", "id": "41", "filled": false },
+>>>>>>> c589481df9aafc3afbd03b8eb564cd6feaafc5ca
     { "state": "PW", "id": "70", "filled": false },
     { "state": "PA", "id": "42", "filled": false },
     { "state": "PR", "id": "72", "filled": false },
