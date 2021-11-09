@@ -93,7 +93,7 @@ import Impact from '../components/Impact/Impact.js';
   }
 
   const ourImpactContent = {
-    bodyText: "description goes here. Something about highlighted states being ones that we've helped residents of. Maybe something also about the scope of our support (US only? future plans?)",
+    bodyText: "We assist cancer patients with transportation and lodging costs all over the United States! We cover both air and ground transportation fees. The map below highlights states where we have assisted patients. The lines show flights that we have paid for." 
   }
 
 function Index(props) {

@@ -99,7 +99,7 @@ export default function BlogHome(props) {
 
   return (
     <Container maxWidth="md" className={classes.container}>
-      <Typography variant="h3" id="Blog" className={classes.title}>Blog</Typography>
+      <Typography variant="h3" id="Blog" className={classes.title}>Recent Blog Posts</Typography>
       <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.blogGrid}>
         {blogPosts.slice(0,3).map(blogPost => 
           {
@@ -125,12 +125,6 @@ export default function BlogHome(props) {
             );
           }
         )}
-        <Grid item xs={12} sm={4}>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-        </Grid>
       </Grid>
     </Container>
   );

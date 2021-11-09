@@ -57,7 +57,7 @@ export default function BlogSummaryCard(props) {
             </Typography>
           </Link>
 
-            <Grid container alignItems="center" className={classes.subtitleContainer}>
+            <Grid container direction="row" alignItems="center" className={classes.subtitleContainer}>
               <Grid item>
                 {
                   authorPicture == null ?
