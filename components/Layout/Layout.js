@@ -13,6 +13,7 @@ import theme from './theme.js';
 const headerSections = [
     { title: 'Home', url: '/index' },
     { title: 'Apply', url: '/apply' },
+    { title: 'Donate', url: '/donate' },
     { title: 'Blog', url: '/blog' },
     { title: 'FAQ', url: '/FAQ' },
     { title: 'Contact', url: '/contact'}

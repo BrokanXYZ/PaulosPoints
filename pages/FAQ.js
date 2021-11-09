@@ -158,6 +158,72 @@ const faqSections = [
             Yes! If you find you do not wish to donate a larger portion at once, there is the option to donate a monthly amount which would pull from your desired payment method.
           </Typography>
       },
+      {
+        question: "Are donations of points or money tax deductible?",
+        answer: 
+          <Typography variant="body2">
+            Cash donations are tax deductible, however, points donations are not. Paulos points is an IRS Recognized 501(c)(3) with an EIN of 84-2542898.
+            Unfortunately, we cannot answer questions about your specific tax situation. We advise consulting with a tax professional for additional information on deductions.
+          </Typography>
+      },
+      {
+        question: "How much does a flight cost when using points?",
+        answer: 
+          <Typography variant="body2">
+               The point cost of a single flight varies greatly. Some of the factors that go into the point cost of a flight include:
+            <List>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Airline" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Booking date" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Time between flight and booking date" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Date of departure, and day of week of departure" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="Date of return, and day of week of return" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="origin airport" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="destination airport" />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <FiberManualRecordOutlinedIcon fontSize="small"/>
+              </ListItemIcon>
+              <ListItemText primary="and more..." />
+            </ListItem>
+          </List>
+          For estimates of flight costs using airline points, please visit the airline's website and try to book a flight using points.
+          </Typography>
+      },
     ]
   },
 ];
