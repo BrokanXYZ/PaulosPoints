@@ -32,7 +32,7 @@ export default function Map(props) {
                         key={geo.rsmKey}
                         stroke="#FAFAFA"
                         geography={geo}
-                        fill={dataset.filled ? theme.palette.secondary.light : "#DDDDDD"}
+                        fill={dataset.filled ? theme.palette.secondary.main : "#DDDDDD"}
                         style={{
                           default: { outline: "none" },
                           hover: { outline: "none" },
@@ -60,7 +60,7 @@ export default function Map(props) {
                     coordinates={coords}
                 >
                   <path  
-                    fill="#d84315" 
+                    fill="black" 
                     d="M 0 -20 C -3.87 -20 -7 -16.87 -7 -13 c 0 5.25 7 13 7 13 s 7 -7.75 7 -13 c 0 -3.87 -3.13 -7 -7 -7 z m 0 9.5 c -1.38 0 -2.5 -1.12 -2.5 -2.5 s 1.12 -2.5 2.5 -2.5 s 2.5 1.12 2.5 2.5 s -1.12 2.5 -2.5 2.5 z" 
                   />
                 </Marker>

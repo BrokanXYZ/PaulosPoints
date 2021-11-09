@@ -93,7 +93,7 @@ import Impact from '../components/Impact/Impact.js';
   }
 
   const ourImpactContent = {
-    bodyText: "We assist cancer patients with transportation and lodging costs all over the United States! We cover both air and ground transportation fees. The map below highlights states where we have assisted patients. The lines show flights that we have paid for." 
+    bodyText: "We assist cancer patients with transportation and lodging costs all over the United States! We cover both air and ground transportation fees." 
   }
 
 function Index(props) {
