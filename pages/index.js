@@ -90,6 +90,10 @@ import BlogHome from '../components/BlogHome/BlogHome.js';
     ]
   }
 
+  const ourImpactContent = {
+    bodyText: "We assist cancer patients with transportation and lodging costs all over the United States! We cover both air and ground transportation fees. The map below highlights states where we have assisted patients. The lines show flights that we have paid for." 
+  }
+
 function Index(props) {
 
   const { useragent, blogPosts } = props;
