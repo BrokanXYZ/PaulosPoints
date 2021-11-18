@@ -28,67 +28,56 @@ import Impact from '../components/Impact/Impact.js';
   }
 
   const ourTeamContent = {
-    bodyText: 'This website was a collaborative effort between several of Paulo’s close friends. You will find information on contributing to Paulo’s Points, frequently asked questions, an application form, and a contact form. We hope that you are able to find everything you need. If you find problems with the site, or would like to provide us with feedback, please reach out to us using the contact us form. Thank you!',
+    bodyText: "Paulo's Points is a collaborative effort between Paulo's close friends and family. None of us receive compensation for the work we do. All donations go directly towards helping cancer patients.",
     profiles: [
       {
         name: 'Lorna Claudio',
         role: 'Project Organizer',
         image: '/cardProfileImgs/mariaProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/lorna-claudio-877053aa/',
-        gitHub: ''
+        linkedIn: 'https://www.linkedin.com/in/lorna-claudio-877053aa/'
       },
       {
         name: 'Brok Stafford',
         role: 'Web Developer',
         image: '/cardProfileImgs/brokProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/brokanstafford/',
-        gitHub: 'https://github.com/BrokanXYZ',       
+        linkedIn: 'https://www.linkedin.com/in/brokanstafford/'
       },
       {
         name: 'Alex Sangster',
-        role: 
-          <>
-            Response Team,<br/>
-            Cybersecurity,<br/>
-            Web Dev Support
-          </>,
+        role: "Response Team",
         image: '/cardProfileImgs/alexProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/',
-        gitHub: '', 
+        linkedIn: 'https://www.linkedin.com/in/alex-sangster-b49363160/'
       },
       {
         name: 'Jackson Beard',
-        role: 
-          <>
-            Response Team,<br/>
-            Cybersecurity,<br/>
-            Web Dev Support
-          </>,
+        role: "Response Team",
         image: '/cardProfileImgs/jacksonProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/jacksonbeard/',
-        gitHub: '',
+        linkedIn: 'https://www.linkedin.com/in/jacksonbeard/'
       },
       {
         name: 'Ian Stone',
         role: 'Response Team',
         image: '/cardProfileImgs/ianProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/',
-        gitHub: '',   
+        linkedIn: 'https://www.linkedin.com/in/ian-stone-b285b7105/'
       },
       {
         name: 'Ashraf Moursi',
         role: 'Social Media',
         image: '/cardProfileImgs/ashrafProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/ashraf-moursi-a68461119/',
-        gitHub: '',      
+        linkedIn: 'https://www.linkedin.com/in/ashraf-moursi-a68461119/'    
       },
       {
         name: 'Dev Nair',
         role: 'Outreach',
         image: '/cardProfileImgs/devProfile.jpg',
-        linkedIn: 'https://www.linkedin.com/in/dev-nair-230465162/',
-        gitHub: '',   
+        linkedIn: 'https://www.linkedin.com/in/dev-nair-230465162/'
       },
+      {
+        name: 'Jenneen Elkhalid',
+        role: 'Super cool role',
+        image: '/cardProfileImgs/jenneenProfile.jpg',
+        linkedIn: 'https://www.linkedin.com/in/jenneen-elkhalid-896985148/'
+      }
     ]
   }
 

@@ -43,7 +43,6 @@ export default function OurTeam(props) {
                 role={profile.role}
                 image={profile.image}
                 linkedIn={profile.linkedIn}
-                gitHub={profile.gitHub}
               />}
             </Grid>
         ))}
