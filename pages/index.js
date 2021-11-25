@@ -74,7 +74,7 @@ import Impact from '../components/Impact/Impact.js';
       },
       {
         name: 'Jenneen Elkhalid',
-        role: 'Super cool role',
+        role: 'Outreach',
         image: '/cardProfileImgs/jenneenProfile.jpg',
         linkedIn: 'https://www.linkedin.com/in/jenneen-elkhalid-896985148/'
       }
