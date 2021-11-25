@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -9,6 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 
+import { NameHelper } from '../utils/NameHelper'
+
 const useStyles = makeStyles({
   root: {
     width: 200,
@@ -18,9 +20,6 @@ const useStyles = makeStyles({
   },
   linkedInIcon: {
     color: '#2867B2',
-  },
-  gitHubIcon: {
-    color: 'black',
   },
   cardContent: {
     padding: '15px'
@@ -33,21 +32,24 @@ const useStyles = makeStyles({
 
 export default function ProfileCard(props) {
   const classes = useStyles();
-  const { name, role, image, linkedIn, gitHub } = props;
+  const { name, role, image, linkedIn } = props;
+  const [ imageSrc, setImageSrc ] = useState(image);
 
   return (
     <Card className={classes.root}>
         <CardMedia
           className={classes.media}
-          image={image}
+          image={imageSrc}
           title={name}
         />
         <Grid container className={classes.cardContent}>
           <Grid container item xs={10}>
             <Grid item xs={12}>
-              <Typography className={classes.name}>
-                {name}
-              </Typography>
+              <NameHelper name={name} setImageSrc={setImageSrc}>
+                <Typography className={classes.name}>
+                  {name}
+                </Typography>
+              </NameHelper>
             </Grid>
             <Grid item xs={12}>
               <Typography variant="subtitle2" color="textSecondary">
