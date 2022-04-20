@@ -107,8 +107,7 @@ export default function BlogHome(props) {
             const authorPicture = getAuthorPicture(extractedAuthor);
             const authorInitials = getAuthorInitials(extractedAuthor);            
 
-            const blogPostDateWithoutTime = blogPost.pubDate.substr(0,10);
-            const blogPostMomentDate = moment(blogPostDateWithoutTime, "YYYY-MM-DD");
+            const blogPostMomentDate = moment(blogPost.published);
             const blogPostMomentDateString = blogPostMomentDate.format("MMM D, YYYY");
 
             return(
