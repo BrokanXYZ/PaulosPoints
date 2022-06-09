@@ -47,7 +47,7 @@ export default function Impact(props) {
           <Grid container spacing={0} justifyContent="center" alignItems="center" className={classes.metricGrid}>
             <Grid item xs={6} className={classes.metricGridItem}>
                 <Typography className={classes.metricValue}>
-                  11
+                  20
                 </Typography>
                 <Typography className={classes.metricLabel}>
                   Patients helped
@@ -55,7 +55,7 @@ export default function Impact(props) {
             </Grid>
             <Grid item xs={6} className={classes.metricGridItem}>
               <Typography variant="h5" className={classes.metricValue}>
-                3,391 miles
+                9,551 miles
               </Typography>
               <Typography variant="h5" className={classes.metricLabel}>
                 Travel paid for
