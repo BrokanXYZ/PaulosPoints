@@ -11,7 +11,7 @@ import Footer from '../Footer.js';
 import theme from './theme.js';
   
 const headerSections = [
-    { title: 'Home', url: '/index' },
+    { title: 'Home', url: '/' },
     { title: 'Apply', url: '/apply' },
     { title: 'Donate', url: '/donate' },
     { title: 'Blog', url: '/blog' },
