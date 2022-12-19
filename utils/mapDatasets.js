@@ -65,6 +65,9 @@ export const airportCoords = {
   LIT: [-92.5, 35],
   MFR: [-123.25, 42.5],
   RST: [-93.25, 45.2],
+  MIA: [-80.35, 26],
+  RDI: [-78.5, 36],
+  XNA: [-94, 36],
 }
 
 export const flightData = [
@@ -79,5 +82,13 @@ export const flightData = [
   {
     from: airportCoords.LIT,
     to: airportCoords.MFR
+  },
+  {
+    from: airportCoords.LIT,
+    to: airportCoords.MIA
+  },
+  {
+    from: airportCoords.XNA,
+    to: airportCoords.RDI
   },
 ];
