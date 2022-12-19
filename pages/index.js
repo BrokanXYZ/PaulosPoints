@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
 import parse from 'rss-to-json';
@@ -88,9 +88,13 @@ import Impact from '../components/Impact/Impact.js';
 
 function Index(props) {
 
-  const { useragent, blogPosts } = props;
+  const { blogPosts } = props;
 
-  const isMobile = useragent.isMobile;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(()=>{
+    setIsMobile(window.navigator.userAgentData.mobile);
+  }, [])
 
   return (
     <Layout currentPage="Home" isMobile={isMobile}>
@@ -111,11 +115,11 @@ function Index(props) {
   );
 }
 
-Index.getInitialProps = async ctx => {
-  const mediumRssResponse = await parse('https://medium.com/feed/@paulospoints');
-  const blogPosts = mediumRssResponse.items;
-
-  return { useragent: ctx.ua, blogPosts: blogPosts}
+export async function getServerSideProps() {
+  let mediumRssResponse = await parse(`https://medium.com/feed/@paulospoints`)
+  let blogPosts = mediumRssResponse.items
+  return { props: JSON.parse(JSON.stringify({ blogPosts })) }
 }
+
 
 export default withUserAgent(Index);
