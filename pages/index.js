@@ -93,7 +93,18 @@ function Index(props) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(()=>{
-    setIsMobile(window.navigator.userAgentData.mobile);
+    let isMobile = false;
+    if (window != null) {
+      if (window.navigator != null) {
+        if (window.navigator.userAgentData != null) {
+          if (window.navigator.userAgentData.mobile != null) {
+            isMobile = window.navigator.userAgentData.mobile
+          }
+        }
+      }
+    }
+
+    setIsMobile(isMobile);
   }, [])
 
   return (
