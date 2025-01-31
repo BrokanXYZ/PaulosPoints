@@ -6,8 +6,7 @@ import { makeStyles } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { spacing } from '../components/Layout/theme';
-
+import { spacing } from '../../components/Layout/theme';
 import BlogSummaryCard from './BlogSummaryCard.js';
 
 const useStyles = makeStyles((theme) => ({
