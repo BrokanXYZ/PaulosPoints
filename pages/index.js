@@ -5,7 +5,7 @@ import parse from 'rss-to-json';
 
 import { withUserAgent } from 'next-useragent';
 
-import Divider from '@material-ui/core/Divider';
+import Divider from '@mui/material/Divider';
 
 import OurMission from '../components/OurMission.js';
 import AboutUs from '../components/AboutUs.js';

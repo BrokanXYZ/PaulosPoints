@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useTheme } from '@material-ui/core/styles';
-import { Popover } from '@material-ui/core';
+import { useTheme } from '@mui/material/styles';
+import { Popover } from '@mui/material';
 import {
   ComposableMap,
   Geographies,

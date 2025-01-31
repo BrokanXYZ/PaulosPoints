@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { Grid } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
 
 import { NameHelper } from '../utils/NameHelper'
 

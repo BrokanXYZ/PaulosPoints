@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 
 import Link from 'next/link';
 
-import { makeStyles } from '@material-ui/core/styles';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles } from '@mui/styles';
 
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography'; 
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Button from '@material-ui/core/Button';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import MenuIcon from '@mui/icons-material/Menu';
+
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography'; 
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Button from '@mui/material/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -143,7 +144,7 @@ export default function Header(props) {
                 </ListItem>
                 {sections.map((section) => (
                   <ListItem item key={section.title}>
-                    <Link href={section.url}>
+                    <Link legacyBehavior href={section.url}>
                       <a className={ section.title === currentPage ? classes.currentPageLink : classes.notCurrentPageLink }>
                         <Typography
                           variant="button"
@@ -186,7 +187,7 @@ export default function Header(props) {
             <Grid item container xs={5} spacing={2} justify="space-evenly" className={classes.sectionHeaderContainer}>
               {sections.map((section) => (
                 <Grid item key={section.title}>
-                  <Link href={section.url}>
+                  <Link legacyBehavior href={section.url}>
                     <a className={ section.title === currentPage ? classes.currentPageLink : classes.notCurrentPageLink }>
                       <Typography
                         variant="button"

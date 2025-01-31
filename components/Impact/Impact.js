@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@mui/styles';
+
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Map from './Map.js';
-import { Paper } from '@material-ui/core';
+import { Paper } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   container: {

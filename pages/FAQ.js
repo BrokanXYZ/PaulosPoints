@@ -1,16 +1,17 @@
 import React from 'react';
 import { withUserAgent } from 'next-useragent';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Link from '@material-ui/core/Link';
+import { makeStyles } from '@mui/styles';
 
-import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Link from '@mui/material/Link';
+
+import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 
 import FaqSection from '../components/FaqSection/FaqSection.js';
 import Layout from '../components/Layout/Layout.js';

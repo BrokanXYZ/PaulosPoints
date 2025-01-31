@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
+
 
 import { withUserAgent } from 'next-useragent';
 
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 
-import AirplanemodeActiveOutlinedIcon from '@material-ui/icons/AirplanemodeActiveOutlined';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import AirplanemodeActiveOutlinedIcon from '@mui/icons-material/AirplanemodeActiveOutlined';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 import Layout from '../components/Layout/Layout.js';
 import PointsDonationForm from '../components/PointsDonationForm.js';

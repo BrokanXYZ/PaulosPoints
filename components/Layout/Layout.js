@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Container from '@material-ui/core/Container';
-import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Container from '@mui/material/Container';
+import { ThemeProvider } from '@mui/material/styles';
 
 import Header from '../Header.js';
 import Footer from '../Footer.js';
