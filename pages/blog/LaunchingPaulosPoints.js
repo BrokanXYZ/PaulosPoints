@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 
-import { spacing } from '../components/Layout/theme';
-
+import { spacing } from '../../components/Layout/theme';
 import { withUserAgent } from 'next-useragent';
 
 import Container from '@mui/material/Container';
