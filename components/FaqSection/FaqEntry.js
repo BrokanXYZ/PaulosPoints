@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ExpansionPanel from '@mui/material/ExpansionPanel';
-import ExpansionPanelSummary from '@mui/material/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@mui/material/ExpansionPanelDetails';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -20,8 +20,8 @@ export default function FaqEntry(props) {
     const {question, answer} = props;
 
     return (
-    <ExpansionPanel>
-        <ExpansionPanelSummary
+    <Accordion>
+        <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
@@ -29,10 +29,10 @@ export default function FaqEntry(props) {
             <Typography variant="subtitle1">
                 {question}
             </Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails className={classes.answerText}>
+        </AccordionSummary>
+        <AccordionDetails className={classes.answerText}>
             {answer}
-        </ExpansionPanelDetails>
-    </ExpansionPanel>
+        </AccordionDetails>
+    </Accordion>
     );
 }

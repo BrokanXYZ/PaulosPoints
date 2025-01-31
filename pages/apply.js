@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles';
 
 
 import { withUserAgent } from 'next-useragent';
+import { spacing } from '../components/Layout/theme';
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -15,11 +16,11 @@ import Layout from '../components/Layout/Layout.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(15)
+    marginTop: spacing(4),
+    marginBottom: spacing(15)
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   },
   getAppIcon: {
     marginRight: "8px"

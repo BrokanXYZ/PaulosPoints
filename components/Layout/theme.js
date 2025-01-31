@@ -1,7 +1,8 @@
-import { createMuiTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
-const theme = createMuiTheme({
-    spacing: factor => `${0.25 * factor}rem`, // (Bootstrap strategy)
+export const spacing = (factor) => `${0.25 * factor}rem`; // (Bootstrap strategy)
+
+const theme = createTheme({
     palette: {
       primary: {
         main: '#005cff',

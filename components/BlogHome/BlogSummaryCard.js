@@ -10,6 +10,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
+import { spacing } from '../components/Layout/theme';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '5px !important'
   },
   subtitleContainer: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   },
   authorAvatar: {
-    width: theme.spacing(11),
-    height: theme.spacing(11),
-    marginRight: theme.spacing(1),
+    width: spacing(11),
+    height: spacing(11),
+    marginRight: spacing(1),
     backgroundColor: theme.palette.primary.main
   },
   dateText: {

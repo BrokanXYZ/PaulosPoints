@@ -9,7 +9,7 @@ export const stateData = [
     { "state": "CT", "id": "09", "filled": false },
     { "state": "DE", "id": "10", "filled": false },
     { "state": "DC", "id": "11", "filled": false },
-    { "state": "FL", "id": "12", "filled": false },
+    { "state": "FL", "id": "12", "filled": true },
     { "state": "FM", "id": "64", "filled": false },
     { "state": "GA", "id": "13", "filled": false },
     { "state": "GU", "id": "66", "filled": false },
@@ -18,16 +18,16 @@ export const stateData = [
     { "state": "IL", "id": "17", "filled": false },
     { "state": "IN", "id": "18", "filled": false },
     { "state": "IA", "id": "19", "filled": false },
-    { "state": "KS", "id": "20", "filled": false },
+    { "state": "KS", "id": "20", "filled": true },
     { "state": "KY", "id": "21", "filled": true },
-    { "state": "LA", "id": "22", "filled": false },
+    { "state": "LA", "id": "22", "filled": true },
     { "state": "ME", "id": "23", "filled": false },
     { "state": "MH", "id": "68", "filled": false },
     { "state": "MD", "id": "24", "filled": false },
     { "state": "MA", "id": "25", "filled": false },
     { "state": "MI", "id": "26", "filled": false },
     { "state": "MN", "id": "27", "filled": false },
-    { "state": "MS", "id": "28", "filled": false },
+    { "state": "MS", "id": "28", "filled": true },
     { "state": "MO", "id": "29", "filled": false },
     { "state": "MT", "id": "30", "filled": false },
     { "state": "NE", "id": "31", "filled": false },
@@ -36,7 +36,7 @@ export const stateData = [
     { "state": "NJ", "id": "34", "filled": false },
     { "state": "NM", "id": "35", "filled": false },
     { "state": "NY", "id": "36", "filled": true },
-    { "state": "NC", "id": "37", "filled": false },
+    { "state": "NC", "id": "37", "filled": true },
     { "state": "ND", "id": "38", "filled": false },
     { "state": "MP", "id": "69", "filled": false },
     { "state": "OH", "id": "39", "filled": false },
@@ -68,6 +68,7 @@ export const airportCoords = {
   MIA: [-80.35, 26],
   RDI: [-78.5, 36],
   XNA: [-94, 36],
+  IAH: [-95.34, 29,99]
 }
 
 export const flightData = [
@@ -91,4 +92,12 @@ export const flightData = [
     from: airportCoords.XNA,
     to: airportCoords.RDI
   },
+  {
+    from: airportCoords.XNA,
+    to: airportCoords.IAH
+  },
+  {
+    from: airportCoords.IAH,
+    to: airportCoords.XNA
+  }
 ];

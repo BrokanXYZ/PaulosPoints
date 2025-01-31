@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { makeStyles } from '@mui/styles';
+import { spacing } from '../components/Layout/theme';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -10,11 +11,11 @@ import { Paper } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(15)
+    marginTop: spacing(15),
+    marginBottom: spacing(15)
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   },
   metricGrid: {
     marginTop: "25px",
@@ -48,7 +49,7 @@ export default function Impact(props) {
           <Grid container spacing={0} justifyContent="center" alignItems="center" className={classes.metricGrid}>
             <Grid item xs={6} className={classes.metricGridItem}>
                 <Typography className={classes.metricValue}>
-                  25
+                  35
                 </Typography>
                 <Typography className={classes.metricLabel}>
                   Patients helped
@@ -56,7 +57,7 @@ export default function Impact(props) {
             </Grid>
             <Grid item xs={6} className={classes.metricGridItem}>
               <Typography variant="h5" className={classes.metricValue}>
-                13,169 miles
+                24,285 miles
               </Typography>
               <Typography variant="h5" className={classes.metricLabel}>
                 Travel paid for

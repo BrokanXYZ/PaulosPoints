@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 
+import { spacing } from '../components/Layout/theme';
 
 import { withUserAgent } from 'next-useragent';
 
@@ -12,11 +13,11 @@ import Layout from '../components/Layout/Layout.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(10)
+    marginTop: spacing(4),
+    marginBottom: spacing(10)
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   },
 }));
 

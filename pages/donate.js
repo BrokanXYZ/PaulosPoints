@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 
+import { spacing } from '../components/Layout/theme';
 
 import { withUserAgent } from 'next-useragent';
 
@@ -18,14 +19,14 @@ import PointsDonationForm from '../components/PointsDonationForm.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(15)
+    marginTop: spacing(4),
+    marginBottom: spacing(15)
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   },
   paper: {
-    padding: theme.spacing(3)
+    padding: spacing(3)
   }
 }));
 

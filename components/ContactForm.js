@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
 import { makeStyles } from '@mui/styles';
+import { spacing } from '../components/Layout/theme';
 
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
@@ -17,30 +18,30 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        marginTop: theme.spacing(10),
-        marginBottom: theme.spacing(10)
+        marginTop: spacing(10),
+        marginBottom: spacing(10)
     },
     contactFormGrid:{
         padding: '15px'
     },
     firstNameInput:{
         width: '100%',
-        marginBottom: theme.spacing(3)
+        marginBottom: spacing(3)
     },
     lastNameInput: {
         width: '100%',
-        marginBottom: theme.spacing(3)
+        marginBottom: spacing(3)
     },
     emailInput: {
         width: '100%',
-        marginBottom: theme.spacing(3)
+        marginBottom: spacing(3)
     },
     contactText: {
         fontSize: "18px",
-        padding: theme.spacing(3)
+        padding: spacing(3)
     },
     messageInput: {
-        marginBottom: theme.spacing(3)
+        marginBottom: spacing(3)
     },
     successSnackbar: {
         backgroundColor: '#4CAF50'

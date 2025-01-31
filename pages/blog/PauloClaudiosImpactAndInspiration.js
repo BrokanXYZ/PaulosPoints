@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 
+import { spacing } from '../components/Layout/theme';
 
 import { withUserAgent } from 'next-useragent';
 
@@ -14,11 +15,11 @@ import Layout from '../../components/Layout/Layout.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(15)
+    marginTop: spacing(4),
+    marginBottom: spacing(15)
   },
   title: {
-    marginBottom: theme.spacing(1)
+    marginBottom: spacing(1)
   },
   dateText: {
     fontSize: '14px',
@@ -30,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '16px'
   },
   authorAvatar: {
-    width: theme.spacing(6),
-    height: theme.spacing(6),
-    marginRight: theme.spacing(1),
+    width: spacing(6),
+    height: spacing(6),
+    marginRight: spacing(1),
     backgroundColor: theme.palette.primary.main
   },
   subtitleContainer: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   }
 }));
 

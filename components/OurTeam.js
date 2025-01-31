@@ -1,26 +1,24 @@
 import React from 'react';
-
 import { makeStyles } from '@mui/styles';
-
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-
+import { spacing } from '../components/Layout/theme';
 import ProfileCard from './ProfileCard.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(15),
+    marginTop: spacing(15),
+    marginBottom: spacing(15),
   },
   title: {
-    marginBottom: theme.spacing(4),
+    marginBottom: spacing(4),
   },
   bodyTextContainer: {
     textAlign: 'left'
   },
   profileGrid: {
-    marginTop: theme.spacing(8),
+    marginTop: spacing(8),
   }
 }));
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { withUserAgent } from 'next-useragent';
 
 import { makeStyles } from '@mui/styles';
+import { spacing } from '../components/Layout/theme';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -22,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: spacing(4)
   },
   container: {
-    marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(10)
+    marginTop: spacing(4),
+    marginBottom: spacing(10)
   },
 }));
 

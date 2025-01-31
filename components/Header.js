@@ -18,6 +18,7 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
+import { spacing } from '../components/Layout/theme';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   responsiveImage: {
-    marginTop: theme.spacing(2),
+    marginTop: spacing(2),
     width: '178px',
     height: 'auto',
   },
