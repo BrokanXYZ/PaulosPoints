@@ -5,7 +5,7 @@ import { spacing } from '../components/Layout/theme';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -53,7 +53,7 @@ export default function OurMission(props) {
   return (
     <Container maxWidth="md" className={classes.container}>
       <Grid container>
-        <Grid item container direction="column" xs={12  } sm={7}>
+        <Grid item container direction="column" size={{ xs: 12, sm: 7 }}>
           <Grid item>
             <Typography variant="h3" id="OurMission" className={classes.title}>
               Our Mission
@@ -70,7 +70,7 @@ export default function OurMission(props) {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item size={{ xs: 12, sm: 5 }}>
           <img className={classes.responsiveImage} src="/pauloCircle.png" />
         </Grid>
       </Grid>

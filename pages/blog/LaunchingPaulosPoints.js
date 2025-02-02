@@ -7,7 +7,7 @@ import { withUserAgent } from 'next-useragent';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Link from '@mui/material/Link';
 
 import Layout from '../../components/Layout/Layout.js';

@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 import { spacing } from '../../components/Layout/theme';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Map from './Map.js';
 import { Paper } from '@mui/material';
 
@@ -46,7 +46,7 @@ export default function Impact(props) {
             {content.bodyText}
           </Typography>
           <Grid container spacing={0} justifyContent="center" alignItems="center" className={classes.metricGrid}>
-            <Grid item xs={6} className={classes.metricGridItem}>
+            <Grid item size={{xs: 6}} className={classes.metricGridItem}>
                 <Typography className={classes.metricValue}>
                   35
                 </Typography>
@@ -54,7 +54,7 @@ export default function Impact(props) {
                   Patients helped
                 </Typography>
             </Grid>
-            <Grid item xs={6} className={classes.metricGridItem}>
+            <Grid item size={{xs: 6}} className={classes.metricGridItem}>
               <Typography variant="h5" className={classes.metricValue}>
                 24,285 miles
               </Typography>

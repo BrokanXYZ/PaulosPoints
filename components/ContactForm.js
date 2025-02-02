@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import FormControl from '@mui/material/FormControl';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
@@ -99,13 +99,13 @@ export default function ContactForm(props) {
                     <Paper elevation={2}>
                         <Grid container spacing={2} className={classes.contactFormGrid}>
 
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6}}>
                                 <Typography variant="body1" className={classes.contactText}>
                                     Have a question, comment, or concern? Send us a message by filling out this form! Our team will respond back to you within 24hrs of receiving your message!
                                 </Typography>
                             </Grid>
                         
-                                <Grid item xs={6} direction="column">
+                                <Grid item size={{ xs: 6}} direction="column">
                                     <TextField
                                         required
                                         label="First Name"
@@ -138,7 +138,7 @@ export default function ContactForm(props) {
                                     />
                                 </Grid>
                                     
-                                <Grid item xs={12}>
+                                <Grid item size={{ xs: 12}}>
                                     <FormControl fullWidth>
                                         <TextField
                                             required

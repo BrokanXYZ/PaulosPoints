@@ -7,7 +7,7 @@ import { withUserAgent } from 'next-useragent';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
@@ -35,12 +35,12 @@ function getContent(donationType, setDonationType, isMobile){
     case "none":
       return(
       <Grid container>
-        <Grid item xs={12} style={{textAlign: 'center', marginBottom: '25px'}}>
+        <Grid item size={{xs: 12}} style={{textAlign: 'center', marginBottom: '25px'}}>
           <Typography variant="body1">
             Take action!
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4} style={{textAlign: 'center', paddingBottom: "20px"}}>
+        <Grid item size={{xs: 12, sm: 4}} style={{textAlign: 'center', paddingBottom: "20px"}}>
               <Button href="https://www.paypal.com/us/fundraiser/charity/4117896" target="_blank">
                 <AttachMoneyIcon />
                 <Typography variant="button">
@@ -48,7 +48,7 @@ function getContent(donationType, setDonationType, isMobile){
                 </Typography>
               </Button>
         </Grid>
-        <Grid item xs={12} sm={4} style={{textAlign: 'center', paddingBottom: "20px"}}>
+        <Grid item size={{xs: 12, sm: 4}} style={{textAlign: 'center', paddingBottom: "20px"}}>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick" />
               <input type="hidden" name="hosted_button_id" value="YK6G79KLWXUU4" />
@@ -60,7 +60,7 @@ function getContent(donationType, setDonationType, isMobile){
               </Button>
             </form>
         </Grid>
-        <Grid item xs={12} sm={4} style={{textAlign: 'center'}}>
+        <Grid item size={{xs: 12, sm: 4}} style={{textAlign: 'center'}}>
           <Button size="large" onClick={() => setDonationType("points")}>
             <AirplanemodeActiveOutlinedIcon style={{marginRight: '5px'}}/>
             <Typography variant="button">

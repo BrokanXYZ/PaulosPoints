@@ -9,7 +9,7 @@ import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import { spacing } from '../../components/Layout/theme';
 
 const useStyles = makeStyles((theme) => ({

@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import { spacing } from '../components/Layout/theme';
 import ProfileCard from './ProfileCard.js';
 

@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Link from '@mui/material/Link';
 
 import Layout from '../components/Layout/Layout.js';
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   linkStyleOverride: {
     color: "inherit",
+    textDecoration: "none",
     "&:hover": {
       textDecoration: "none"
     }
@@ -74,7 +75,7 @@ function blog(props) {
                 <Divider />
                 <Link href={blogPost.link} className={classes.linkStyleOverride} target="_blank">
                   <ListItem button>
-                    <Grid container justify="space-between" alignItems="center">
+                    <Grid container sx={{justifyContent:"space-between", alignContent:"center", width: "100%"}}>
                       <Grid item>
                         <Typography variant="body1" className={ isMobile ? classes.blogTitleTextMobile : classes.blogTitleText}>
                           {blogPost.title}

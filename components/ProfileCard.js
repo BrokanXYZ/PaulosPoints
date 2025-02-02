@@ -8,7 +8,7 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 import { NameHelper } from '../utils/NameHelper'
 
@@ -44,21 +44,21 @@ export default function ProfileCard(props) {
           title={name}
         />
         <Grid container className={classes.cardContent}>
-          <Grid container item xs={10}>
-            <Grid item xs={12}>
+          <Grid container item size={{xs: 10}}>
+            <Grid item size={{xs: 12}}>
               <NameHelper name={name} setImageSrc={setImageSrc}>
                 <Typography className={classes.name}>
                   {name}
                 </Typography>
               </NameHelper>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item size={{xs: 12}}>
               <Typography variant="subtitle2" color="textSecondary">
                 {role}
               </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item size={{xs: 2}}>
             <IconButton href={linkedIn} target="_blank" size="small">
               <LinkedInIcon fontSize="default" className={classes.linkedInIcon}/>
             </IconButton>

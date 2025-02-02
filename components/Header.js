@@ -11,7 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography'; 
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
@@ -177,7 +177,7 @@ export default function Header(props) {
     return (
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <Grid container spacing={0} justify="space-between">
+          <Grid container spacing={0} sx={{justifyContent: "space-between", width: "100%"}}>
 
             <Grid item>
               <Link href="/index">
@@ -185,7 +185,7 @@ export default function Header(props) {
               </Link>
             </Grid>
 
-            <Grid item container xs={5} spacing={2} justify="space-evenly" className={classes.sectionHeaderContainer}>
+            <Grid item container size={{ xs: 5}} spacing={2} sx={{justifyContent: "space-evenly"}} className={classes.sectionHeaderContainer}>
               {sections.map((section) => (
                 <Grid item key={section.title}>
                   <Link legacyBehavior href={section.url}>
@@ -203,7 +203,7 @@ export default function Header(props) {
               ))}
             </Grid>
 
-            <Grid item container xs={3} spacing={0} justify="flex-end" alignItems="flex-end">
+            <Grid item container size={{ xs: 3}} spacing={0} sx={{justifyContent: "flex-end", alignItems: "flex-end"}}>
               
               <Grid item>
                 <Button 
