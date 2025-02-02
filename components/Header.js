@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
     backgroundColor: theme.palette.secondary.main,
     borderRadius: 50,
-    marginBottom: '12px',
+    marginBottom: '8px',
     '&:hover': {
       transform: 'scale(1.1)',
       backgroundColor: theme.palette.secondary.lessDark,
@@ -203,7 +203,7 @@ export default function Header(props) {
               ))}
             </Grid>
 
-            <Grid item container size={{ xs: 3}} spacing={0} sx={{justifyContent: "flex-end", alignItems: "flex-end"}}>
+            <Grid item container size={{ xs: 3}} spacing={0} sx={{justifyContent: "flex-end", alignItems: "center", marginBottom: "20px"}}>
               
               <Grid item>
                 <Button 
