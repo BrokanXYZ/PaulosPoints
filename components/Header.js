@@ -177,7 +177,7 @@ export default function Header(props) {
     return (
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <Grid container spacing={0} sx={{justifyContent: "space-between", width: "100%"}}>
+          <Grid container spacing={0} sx={{justifyContent: "space-between", width: "100%", height: "63px"}}>
 
             <Grid item>
               <Link href="/index">
