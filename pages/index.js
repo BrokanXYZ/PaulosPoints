@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import axios from 'axios';
 import parse from 'rss-to-json';
 
 import { withUserAgent } from 'next-useragent';

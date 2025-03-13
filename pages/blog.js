@@ -100,8 +100,8 @@ function blog(props) {
 }
 
 blog.getInitialProps = async ctx => {
-  const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
-  const blogPosts = await res.data.items;
+  ///const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
+  const blogPosts = [];//await res.data.items;
 
   return { useragent: ctx.ua.source, blogPosts: blogPosts}
 }
