@@ -162,7 +162,7 @@ export default function Header(props) {
             </SwipeableDrawer>
 
             <Grid item>
-              <Link href="/index">
+              <Link href="/">
                 <img className={classes.responsiveImage} style={{cursor: 'pointer'}} src="/mainLogo.png" />
               </Link>
             </Grid>
@@ -180,7 +180,7 @@ export default function Header(props) {
           <Grid container spacing={0} sx={{justifyContent: "space-between", width: "100%", height: "63px"}}>
 
             <Grid item>
-              <Link href="/index">
+              <Link href="/">
                 <img className={classes.responsiveImage} style={{cursor: 'pointer'}} src="/mainLogo.png" />
               </Link>
             </Grid>

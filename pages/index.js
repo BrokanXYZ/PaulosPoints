@@ -90,22 +90,26 @@ function Index(props) {
   //const { blogPosts } = props;
   const blogPosts = [];
 
-  const [isMobile, setIsMobile] = useState(false);
+  const { ua } = props;
 
-  useEffect(()=>{
-    let isMobile = false;
-    if (window != null) {
-      if (window.navigator != null) {
-        if (window.navigator.userAgentData != null) {
-          if (window.navigator.userAgentData.mobile != null) {
-            isMobile = window.navigator.userAgentData.mobile
-          }
-        }
-      }
-    }
+  const isMobile = ua.isMobile;
 
-    setIsMobile(isMobile);
-  }, [])
+  // const [isMobile, setIsMobile] = useState(false);
+
+  // useEffect(()=>{
+  //   let isMobile = false;
+  //   if (window != null) {
+  //     if (window.navigator != null) {
+  //       if (window.navigator.userAgentData != null) {
+  //         if (window.navigator.userAgentData.mobile != null) {
+  //           isMobile = window.navigator.userAgentData.mobile
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   setIsMobile(isMobile);
+  // }, [])
 
   return (
     <Layout currentPage="Home" isMobile={isMobile}>
@@ -131,6 +135,10 @@ function Index(props) {
 //   //let blogPosts = mediumRssResponse.items
 //   return { props: JSON.parse(JSON.stringify({ blogPosts })) }
 // }
+
+Index.getInitialProps = async ctx => {
+  return { useragent: ctx.ua.source}
+}
 
 
 export default withUserAgent(Index);
