@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react';
-
-//import parse from 'rss-to-json';
-
+import React from 'react';
+import axios from 'axios';
 import { withUserAgent } from 'next-useragent';
-
 import Divider from '@mui/material/Divider';
-
 import OurMission from '../components/OurMission.js';
 import AboutUs from '../components/AboutUs.js';
 import TakeAction from '../components/TakeAction/TakeAction.js';
@@ -86,30 +82,9 @@ import Impact from '../components/Impact/Impact.js';
   }
 
 function Index(props) {
-
-  //const { blogPosts } = props;
-  const blogPosts = [];
-
-  const { ua } = props;
+  const { ua: ua, blogPosts: blogPosts } = props;
 
   const isMobile = ua.isMobile;
-
-  // const [isMobile, setIsMobile] = useState(false);
-
-  // useEffect(()=>{
-  //   let isMobile = false;
-  //   if (window != null) {
-  //     if (window.navigator != null) {
-  //       if (window.navigator.userAgentData != null) {
-  //         if (window.navigator.userAgentData.mobile != null) {
-  //           isMobile = window.navigator.userAgentData.mobile
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   setIsMobile(isMobile);
-  // }, [])
 
   return (
     <Layout currentPage="Home" isMobile={isMobile}>
@@ -130,15 +105,11 @@ function Index(props) {
   );
 }
 
-// export async function getServerSideProps() {
-//   //let mediumRssResponse = await parse(`https://medium.com/feed/@paulospoints`)
-//   //let blogPosts = mediumRssResponse.items
-//   return { props: JSON.parse(JSON.stringify({ blogPosts })) }
-// }
-
 Index.getInitialProps = async ctx => {
-  return { useragent: ctx.ua.source}
-}
+  const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@paulospoints');
+  const blogPosts = await res.data.items;
 
+  return { blogPosts: blogPosts, useragent: ctx.ua.source }
+}
 
 export default withUserAgent(Index);

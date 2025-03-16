@@ -8,8 +8,8 @@ import Grid from '@mui/material/Grid2';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: spacing(15),
-    marginBottom: spacing(15)
+    marginTop: spacing(10),
+    marginBottom: spacing(10)
   },
   title: {
     marginBottom: spacing(4)
@@ -31,7 +31,7 @@ export default function Partners(props) {
     <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" className={classes.title}>Partners</Typography>
       <Container maxWidth="md">
-        <Grid container spacing={10} justify="center" alignItems="center">
+        <Grid container spacing={10} justifyContent="center" alignItems="center">
           <Grid item size={{ sm: 6, md: 6 }} className={classes.logoItem}>
             <a href="https://www.flyingaggies.com/" target="_blank">
               <img src="logos/flyingAggiesLogo.png" className={classes.logo} />

@@ -6,15 +6,13 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Link from '@mui/material/Link';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid2';
 import { spacing } from '../../components/Layout/theme';
 
 const useStyles = makeStyles((theme) => ({
   blogDateText: {
-    fontWeight: 'lighter'
+    fontWeight: 'lighter',
   },
   readMoreListItem: {
     justifyContent: 'center'
@@ -25,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   blogCard: {
-    paddingBottom: '5px !important'
+    paddingBottom: '5px !important',
+    height: "152px"
   },
   subtitleContainer: {
-    marginBottom: spacing(4)
+    marginBottom: spacing(2)
   },
   authorAvatar: {
     width: spacing(11),
@@ -49,38 +48,39 @@ export default function BlogSummaryCard(props) {
   const { title, author, authorPicture, authorInitials, contentSummary, date, link } = props;
 
   return (
-    <Card variant="elevation">
+    <Card variant="outlined">
           <CardContent className={classes.blogCard}>
-
-          <Link href={link} color="secondary" target="_blank">
-            <Typography variant="h6" gutterBottom>
-              {title}
-            </Typography>
-          </Link>
-
-            <Grid container direction="row" alignItems="center" className={classes.subtitleContainer}>
-              <Grid item>
-                {
-                  authorPicture == null ?
-                    <Avatar alt="Author Icon" className={classes.authorAvatar}>{authorInitials}</Avatar>
-                  :
-                    <Avatar alt="Author Icon" className={classes.authorAvatar} src={authorPicture}/>
-                }
+            <Grid container justifyContent="space-between" sx={{height: "100%"}}>
+              <Grid item size={12}>
+                <Link href={link} color="primary" target="_blank">
+                  <Typography variant="h6" gutterBottom>
+                    {title}
+                  </Typography>
+                </Link>
               </Grid>
-              <Grid item direction="column">
+              <Grid size={12} item container direction="row" alignItems="flex-end" className={classes.subtitleContainer}>
                 <Grid item>
-                  <Typography className={classes.authorText}>
-                    {author}
-                  </Typography>
+                  {
+                    authorPicture == null ?
+                      <Avatar alt="Author Icon" className={classes.authorAvatar}>{authorInitials}</Avatar>
+                    :
+                      <Avatar alt="Author Icon" className={classes.authorAvatar} src={authorPicture}/>
+                  }
                 </Grid>
-                <Grid item>
-                  <Typography color="textSecondary" className={classes.dateText}>
-                    {date}
-                  </Typography>
+                <Grid item direction="column">
+                  <Grid item>
+                    <Typography className={classes.authorText}>
+                      {author}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography className={classes.dateText}>
+                      {date}
+                    </Typography>
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>
-
           </CardContent>
     </Card>
   );

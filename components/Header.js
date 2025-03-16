@@ -76,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '21px'
   },
   buttonRoot: {
+    color: "black",
     minWidth: 100,
     transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
     backgroundColor: theme.palette.secondary.main,
@@ -87,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   buttonLabel: {
-    color: "white",
     textTransform: 'none',
     fontSize: 15,
     fontWeight: 700,

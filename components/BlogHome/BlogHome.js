@@ -11,8 +11,8 @@ import BlogSummaryCard from './BlogSummaryCard.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: spacing(15),
-    marginBottom: spacing(15),
+    marginTop: spacing(10),
+    marginBottom: spacing(10),
   },
   title: {
     marginBottom: spacing(4),
@@ -101,14 +101,15 @@ export default function BlogHome(props) {
   return (
     <Container maxWidth="md" className={classes.container}>
       <Typography variant="h3" id="Blog" className={classes.title}>Recent Blog Posts</Typography>
-      <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.blogGrid}>
+      <Grid container direction="row" justify="space-evenly" spacing={5} className={classes.blogGrid}>
         {blogPosts.slice(0,3).map(blogPost => 
           {
             const extractedAuthor = extractAuthor(blogPost.content);
             const authorPicture = getAuthorPicture(extractedAuthor);
             const authorInitials = getAuthorInitials(extractedAuthor);            
 
-            const blogPostMomentDate = moment(blogPost.published);
+            const blogPostDateWithoutTime = blogPost.pubDate.substr(0,10); "2020-01-15 3:00:23 AM"
+            const blogPostMomentDate = moment(blogPostDateWithoutTime, "YYYY-MM-DD");
             const blogPostMomentDateString = blogPostMomentDate.format("MMM D, YYYY");
 
             return(

@@ -9,8 +9,8 @@ import Grid from '@mui/material/Grid2';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: spacing(15),
-    marginBottom: spacing(15)
+    marginTop: spacing(10),
+    marginBottom: spacing(10)
   },
   title: {
     marginBottom: spacing(4)
@@ -29,17 +29,23 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'justify'
   },
   slogan: {
-    color: theme.palette.secondary.main,
+    color: 'black',
     fontSize: '1.5rem',
     fontStyle: 'italic',
     paddingTop: '20px',
+    fontWeight: "bold",
+    textDecoration: "underline",
+    textDecorationColor: "#FFA300"
   },
   sloganMobile: {
-    color: theme.palette.secondary.main,
+    color: 'black',
     fontSize: '1.25rem',
     fontStyle: 'italic',
     paddingTop: '10px',
-    paddingBottom: '15px'
+    paddingBottom: '15px',
+    fontWeight: "bold",
+    textDecoration: "underline",
+    textDecorationColor: "#FFA300"
   },
   sloganDiv: {
     textAlign: 'center'
@@ -65,7 +71,7 @@ export default function OurMission(props) {
             </Typography>
           </Grid>
           <Grid item className={classes.sloganDiv}>
-            <Typography variant="subtitle1" color="inherit" className={ isMobile ? classes.sloganMobile : classes.slogan}>
+            <Typography variant="subtitle1" className={ isMobile ? classes.sloganMobile : classes.slogan}>
               Saving lives one mile at a time
             </Typography>
           </Grid>

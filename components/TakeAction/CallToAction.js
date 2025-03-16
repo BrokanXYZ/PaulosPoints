@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   buttonRoot: {
+    color: "black",
     minWidth: 200,
     transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
     backgroundColor: theme.palette.secondary.main,
@@ -30,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   buttonLabel: {
-    color: "white",
     textTransform: 'none',
     fontSize: 20,
     fontWeight: 700,

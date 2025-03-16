@@ -6,12 +6,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
 import Map from './Map.js';
-import { Paper } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: spacing(15),
-    marginBottom: spacing(15)
+    marginTop: spacing(10),
+    marginBottom: spacing(10)
   },
   title: {
     marginBottom: spacing(4)

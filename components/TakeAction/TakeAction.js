@@ -11,8 +11,8 @@ import CallToAction from './CallToAction.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: spacing(15),
-    marginBottom: spacing(15)
+    marginTop: spacing(10),
+    marginBottom: spacing(10)
   },
   title: {
     marginBottom: spacing(4)

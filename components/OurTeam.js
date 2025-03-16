@@ -8,8 +8,8 @@ import ProfileCard from './ProfileCard.js';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: spacing(15),
-    marginBottom: spacing(15),
+    marginTop: spacing(10),
+    marginBottom: spacing(10),
   },
   title: {
     marginBottom: spacing(4),
@@ -34,7 +34,7 @@ export default function OurTeam(props) {
           {content.bodyText}
         </Typography>
       </Container>
-      <Grid container direction="row" justify="space-evenly" spacing={10} className={classes.profileGrid}>
+      <Grid container direction="row" justifyContent="center" spacing={10} className={classes.profileGrid}>
         {content.profiles.map((profile) => (
             <Grid item key={profile.name}>
               {<ProfileCard
